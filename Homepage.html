@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chris Vasterling</title>
+	<link rel="stylesheet" type="text/css" href="Files/CSS/Main.css"/>
+	<script src="Files/Javascript/Main.js"></script>
+</head>
+<body>
+	<div id="load_screen">
+		<div id="loading">
+			<center>
+				Loading...
+				<br/>
+				<br/>
+				Please wait
+				<br/>
+				<!--<img src="Files/Images/load1.gif" alt="loading" style="width:auto; height:auto;"/>-->
+		</center>
+		</div>
+	</div>
+	<div onclick=sidebarin() title="1" id=smbtnin class="smbtnin">
+		<div class="switchbtn">|</div>
+		<div class="switchbtn">|</div>
+		<div class="switchbtn">|</div>
+	</div>
+	<div onclick=sidebarout() title="2" id=smbtnout style="display:none" class="smbtnout">
+		<div class="switchbtn">|</div>
+		<div class="switchbtn">|</div>
+		<div class="switchbtn">|</div>
+	</div>
+	<div id=sidebar class="sidebar">
+		<center>
+			<div class="navigation">
+				<a href="#websites" style="text-decoration: none;"><input type="button" class=sidebtn onclick="sidebarout()" value="Websites"></a>
+				<a href="#projects" style="text-decoration: none;"><input type="button" class=sidebtn onclick="sidebarout()" value="Projects"></a>
+				<a href="#how-work" style="text-decoration: none;"><input type="button" class=sidebtn onclick="sidebarout()" value="How I work"></a>
+				<a href="#cntct" style="text-decoration: none;"><input type="button" class=sidebtn onclick="sidebarout()" value="Contact"></a>
+			</div>
+			<br>
+			Tweet Button/Twitter Feed
+			<br>
+			Share button
+		</center>
+	</div>
+	<div id="cover" onclick=sidebarout() class=cover></div>
+	<div id=mcontent class=maincontent>
+		<a name="websites"></a>
+		<div class="websites" id="websites">
+			<p class="home-header">Websites </p>
+			<a href="" style="text-decoration: none;"><input type="button" class="more" value="Click to view more"/></a>
+		</div>
+		<a name="projects"></a>
+		<div class="projects" id="projects">
+			<p class="home-header">Projects/Templates</p>
+			<a href="" style="text-decoration: none;"><input type="button" class="more" value="Click to view more"/></a>
+		</div>
+		<a name="how-work"></a>
+		<div class="how-work" id="how-work">
+			<p class="home-header">How I Work</p>
+			<p class="home-desk">Technology/Software I use:</p>
+            <div class="work-logos">
+                <img src="Files/Images/work-icon/brackets.png" class="work-logos"/>
+                <img src="Files/Images/work-icon/atom.jpg" class="work-logos"/>
+				<img src="Files/Images/work-icon/Ubuntu.png" alt="Ubuntu logo" class="work-logos"/>
+            </div>
+			<ul style="margin-bottom:0px; width:50%; display:block; width:calc(50% - 40px);">
+				<li class="desk-list"><a href="http://www.drive.google.com" target="_blank" class="tech-links">Google Drive</a></li>
+				<li class="desk-list"><a href="http://www.atom.io" target="_blank" class="tech-links">Atom</a> (Code editor)</li>
+                <li class="desk-list"><a href="http://www.brackets.io" target="_blank" class="tech-links">Brackets</a> (Code editor)</li>
+				<li class="desk-list"><a href="http://www.microsoft.com/en-us/store/apps/code-writer/9wzdncrfhzdt" target="_blank" class="tech-links">Code Editor</a> (Windows 8/10 App)</li>
+				<li class="desk-list"><a href="http://www.weebly.com" target="_blank" class="tech-links">Weebly</a></li>
+				<li class="desk-list">Surface 2</li>
+				<li class="desk-list">Windows 7 / RT 8.1</li>
+				<li class="desk-list"><a href="http://www.ubuntu.com/download/desktop" target="_blank" class="tech-links">Ubuntu 14.04</a></li>
+			</ul>
+		</div>
+		<a name="cntct"></a>
+		<div class="cntct" id="cntct">
+			<p class="home-header">Contact</p>
+			<p class="home-email">chrisvasterling@outlook.com</p>
+			<p class="home-email2" style="font-size:30px; margin-bottom:0px;">
+				<a href="https://www.facebook.com/chris.vasterling.vastermaster" target="_blank" class="tech-links-social">Facebook</a>
+				-
+				<a href="https://www.twitter.com/Vastermaster" target="_blank" class="tech-links-social">Twitter</a>
+				-
+				<a href="https://plus.google.com/+chrisvasterling/posts" target="_blank" class="tech-links-social">Google+</a></p>
+		</div>
+		<div class="footer">
+			<p style="margin:0px; padding:0px;">This website was created and designed by Chris Vasterling</p>
+			<br/>
+			<p style="margin:0px; padding:0px;">~<i>Slogan</i>~</p>
+		</div>
+	</div>
+</body>
+</html>

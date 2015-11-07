@@ -1,0 +1,324 @@
+body {
+	margin:0px;
+	padding:0px;
+	
+	background-color: rgb(0, 0, 0);
+}
+.sidebar {
+	display:block;
+	margin-top:-85px;
+	margin-left:-300px;
+	background-color:rgba(60, 60, 60, 0.95);
+	background-image:url("../Images/background/b1.png");
+	background-repeat: repeat-y;
+	position:fixed;
+	height:calc(100% + 85px);
+	width:300px;
+	overflow-y:auto;
+	z-index:1;
+    transition: transform .2s linear;
+    -webkit-transform: translateZ(0);
+	transform: translateZ(0);
+}
+.sidebar:focus {
+    transform: translate(300px,0px);
+}
+.smbtnin, .smbtnout {
+	//position:fixed;
+	position: absolute;
+	top:20px;
+	left:20px;
+	height:30px;
+	width:auto;
+	cursor:pointer;
+	z-index:2;
+}
+.smbtnout {
+	position:fixed;
+}
+.switchbtn {
+	width: 25px;
+	height: 5px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	font-size:0px;
+	background-color:red;
+}
+.maincontent {
+	margin-left:auto;
+	margin-top:55px;
+}
+.cover {
+	display: none;
+}
+.cover2 {
+	position: fixed;
+	top:0px;
+	left:300px;
+    display:block;
+	height:100%;
+	width:100%; /*calc(100% - 300px);*/
+    z-index:2;
+}
+.navigation {
+	width:100%;
+	height:auto;
+	margin-top: 100px;
+}
+.sidebtn {
+	margin-top:10px;
+	margin-bottom:10px;
+	width: 80%;
+	font-size:25px;
+	background-color:transparent;
+	color:rgb(1000, 0, 0);
+	border:0px;
+	padding:10px;
+	transition: background-color 0.2s linear;
+}
+.sidebtn:hover {
+	background-color:rgba(0, 0, 0, 0.5);
+	cursor:pointer;
+	border-left: 5px solid black;
+	border-right: 5px solid black;
+}
+.projects, .websites, .how-work, .cntct   {
+	width:100%;
+	height:500px; /*Temporary*/
+    //height:auto;
+	background-size: cover;
+	background-repeat: no-repeat;
+  //background-attachment: fixed;
+	background-position: center;
+	color:white;
+	overflow: hidden;
+}
+.projects {
+	background-image: url("../Images/bk/projects.jpg");
+}
+.websites {
+	background-image: url("../Images/bk/websites.png");
+}
+.how-work {
+    background-image: url("../Images/bk/how-work.jpg");
+	/*background-image: url("../Images/bk/how-work.gif");*/
+}
+.cntct {
+	//background-image: url("../Images/bk/cntct.png");
+	background-color: rgb(0, 0, 0);
+	height:auto;
+}
+.footer {
+	width:100%;
+	height:auto;
+	color:white;
+	background-color: rgba(0, 0, 0, 0.6);
+	margin:0px;
+	font-size:20px;
+	padding-top:10px;
+	padding-bottom: 10px;
+	text-align:center;
+	border-top: solid 2px red;
+}
+.home-header {
+	background-color: rgba(40, 40, 40, 0.9);
+	padding-left: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin:0px;
+	font-size:30px;
+}
+.home-desk {
+	padding-left: 10px;
+	font-size: 25px;
+}
+.desk-list {
+	list-style: none;
+	font-size:20px;
+	color:rgb(255, 255, 255);
+	margin-top:5px;
+	margin-bottom: 0px;
+}
+.tech-links {
+	text-decoration: underline;
+	color:rgb(0, 255, 0);
+}
+.tech-links:hover, .tech-links-social:hover {
+	color:rgb(255, 0, 0);
+}
+.tech-links:visited {
+	color:rgb(0, 255, 0);
+}
+.tech-links:visited:hover, .tech-links-social:visited:hover {
+	color:rgb(255, 0, 0);
+}
+.tech-links-social, .tech-links-social:visited {
+	text-decoration: underline;
+	color:rgb(60, 60, 255);
+}
+.home-email, .home-email2 {
+	width:auto;;
+	text-align: center;
+	font-size: 50px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+#load_screen {
+	position: fixed;
+	top:0px;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	z-index:1000;
+}
+#loading {
+	height: auto;
+	width: 100%;
+	color: white;
+	font-size: 30px;
+}
+.more {
+	width:auto;
+	padding:3px;
+	font-size: 35px;
+	position: relative;
+	top:10px;
+	left:10px;
+	background-color: rgba(0, 145, 240, 0.9);
+    color:black;
+	border:0px;
+	/*animation-name: moreOff;
+	animation-duration: .4s;*/
+	transition: font-size 0.3s cubic-bezier(0.5, 2.5, 1, 1), background-color 0.3s cubic-bezier(0.5, 2.5, 1, 1);
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+}
+.more:hover {
+	cursor: pointer;
+	font-size: 45px;
+	/*animation-name: moreOn;
+	animation-duration: .4s;*/
+	background-color: rgba(0, 145, 240, 1);
+}
+.work-logos > img {
+    width:155px;
+    height:150px;
+    margin:10px;
+    float:left;
+}
+.work-logos {
+    float:right;
+    //background-color:pink;
+    display:block;
+    width:50%;
+    height:auto;
+}
+/*Animations start*/
+@-webkit-keyframes sidebarin {
+	from {margin-left: -300px;}
+	to {margin-left: 0px;}
+}
+@-webkit-keyframes sidebarout {
+	from {margin-left: 0px;}
+	to {margin-left: -300px;}
+}
+@keyframes sidebarin {
+	from {margin-left: -300px;}
+	to {margin-left: 0px;}
+}
+@keyframes sidebarout {
+	from {margin-left: 0px;}
+	to {margin-left: -300px;}
+}
+@-webkit-keyframes sidebarbtnin {
+	from {left: 20px;}
+	to {left: 20px;}
+}
+@-webkit-keyframes sidebarbtnout {
+	from {left: 20px;}
+	to {left: 20px;}
+}
+@keyframes sidebarbtnin {
+	from {left: 20px;}
+	to {left: 20px;}
+}
+@keyframes sidebarbtnout {
+	from {left: 20px;}
+	to {left: 20px;}
+}
+@-webkit-keyframes mcontentin {
+	from {margin-left: 0px;}
+	to {margin-left: 300px;}
+}
+@-webkit-keyframes mcontentout {
+	from {margin-left: 300px;}
+	to {margin-left: 0px;}
+}
+@keyframes mcontentin {
+	from {margin-left: 0px;}
+	to {margin-left: 300px;}
+}
+@keyframes mcontentout {
+	from {margin-left: 300px;}
+	to {margin-left: 0px;}
+}
+@-webkit-keyframes coverin {
+	from {background-color: transparent; left: -100%;}
+	to {background-color: rgba(0, 0, 0, 0.5); left: 300px;}
+}
+@-webkit-keyframes coverout {
+	from {background-color: rgba(0, 0, 0, 0.5); left: 300px;}
+	to {background-color: transparent; left: -100%;}
+}
+@keyframes coverin {
+	from {background-color: transparent; left: -100%;}
+	to {background-color: rgba(0, 0, 0, 0.5); left: 300px;}
+}
+@keyframes coverout {
+	from {background-color: rgba(0, 0, 0, 0.5); left: 300px;}
+	to {background-color: transparent; left: -100%;}
+}
+@-webkit-keyframes moreOn {
+	0% {font-size: 35px;}
+	100% {font-size: 50px;}
+}
+@-webkit-keyframes moreOff {
+	0% {font-size: 35}
+	100% {font-size: 35px;}
+}
+@keyframes moreOn {
+	0% {font-size: 35px;}
+	100% {font-size: 50px;}
+}
+@keyframes moreOff {
+	0% {font-size: 50px;}
+	100% {font-size: 35px;}
+}
+/*Animations end*/
+/*CSS CODE FOR MOBILE*/
+@media screen and (max-width: 775px) {
+    /*
+        Dropdown navigation instead of sidebar
+        links turn into buttons (for how-work and social)
+        fewer animations / more transitions/transformations
+    */
+    .home-email {
+        font-size: 175%;
+    }
+    .maincontent {
+        margin-top:0px;
+    }
+    .cover, .cover2, .switchbtn, .sidebar, .desk-list, .work-logos, .home-email2, .home-desk {
+        display:none;
+    }
+    .more {
+        transition: none;
+    }
+    .more:hover {
+        transition: none;
+        font-size: 35px;
+        background-color: rgba(0, 145, 240, 0.9);
+    }
+}
