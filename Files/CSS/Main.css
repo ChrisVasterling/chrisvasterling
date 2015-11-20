@@ -1,8 +1,12 @@
 body {
 	margin:0px;
 	padding:0px;
-	
-	background-color: rgb(0, 0, 0);
+	/*
+	background: -webkit-linear-gradient(90deg, black, red);
+	background: -moz-linear-gradient(90deg, black, red);
+	background: linear-gradient(90deg, black, red);
+	*/
+	background-color: black;
 }
 .sidebar {
 	display:block;
@@ -98,10 +102,11 @@ body {
 }
 .websites {
 	background-image: url("../Images/bk/websites.png");
+    height:auto;
 }
 .how-work {
     background-image: url("../Images/bk/how-work.jpg");
-	/*background-image: url("../Images/bk/how-work.gif");*/
+    height:auto;
 }
 .cntct {
 	//background-image: url("../Images/bk/cntct.png");
@@ -118,7 +123,7 @@ body {
 	padding-top:10px;
 	padding-bottom: 10px;
 	text-align:center;
-	border-top: solid 2px red;
+	border-top: 1px solid red;
 }
 .home-header {
 	background-color: rgba(40, 40, 40, 0.9);
@@ -157,7 +162,7 @@ body {
 	color:rgb(60, 60, 255);
 }
 .home-email, .home-email2 {
-	width:auto;;
+	width:100%;
 	text-align: center;
 	font-size: 50px;
 	margin-top: 10px;
@@ -183,9 +188,6 @@ body {
 	width:auto;
 	padding:3px;
 	font-size: 35px;
-	position: relative;
-	top:10px;
-	left:10px;
 	background-color: rgba(0, 145, 240, 0.9);
     color:black;
 	border:0px;
@@ -214,95 +216,37 @@ body {
     display:block;
     width:50%;
     height:auto;
+    margin-bottom: 75px;
 }
-/*Animations start*/
-@-webkit-keyframes sidebarin {
-	from {margin-left: -300px;}
-	to {margin-left: 0px;}
+.web-thumb {
+	position: relative;
+	top:45px;
+	background-color:pink;
+	margin-left:calc(100% - 95%);
+	margin-right:calc(100% - 95%);
+    height:auto;
+    margin-bottom:calc(75px + 45px);
 }
-@-webkit-keyframes sidebarout {
-	from {margin-left: 0px;}
-	to {margin-left: -300px;}
+.web-thumb-img {
+    color: black;
+    background-color: blue;
+    width:100%;
 }
-@keyframes sidebarin {
-	from {margin-left: -300px;}
-	to {margin-left: 0px;}
+.more-btn {
+	position: relative; 
+	top:10px; 
+	left:10px; 
+	height: 45px;
 }
-@keyframes sidebarout {
-	from {margin-left: 0px;}
-	to {margin-left: -300px;}
+.more-btn:hover {
+	cursor:pointer;
 }
-@-webkit-keyframes sidebarbtnin {
-	from {left: 20px;}
-	to {left: 20px;}
-}
-@-webkit-keyframes sidebarbtnout {
-	from {left: 20px;}
-	to {left: 20px;}
-}
-@keyframes sidebarbtnin {
-	from {left: 20px;}
-	to {left: 20px;}
-}
-@keyframes sidebarbtnout {
-	from {left: 20px;}
-	to {left: 20px;}
-}
-@-webkit-keyframes mcontentin {
-	from {margin-left: 0px;}
-	to {margin-left: 300px;}
-}
-@-webkit-keyframes mcontentout {
-	from {margin-left: 300px;}
-	to {margin-left: 0px;}
-}
-@keyframes mcontentin {
-	from {margin-left: 0px;}
-	to {margin-left: 300px;}
-}
-@keyframes mcontentout {
-	from {margin-left: 300px;}
-	to {margin-left: 0px;}
-}
-@-webkit-keyframes coverin {
-	from {background-color: transparent; left: -100%;}
-	to {background-color: rgba(0, 0, 0, 0.5); left: 300px;}
-}
-@-webkit-keyframes coverout {
-	from {background-color: rgba(0, 0, 0, 0.5); left: 300px;}
-	to {background-color: transparent; left: -100%;}
-}
-@keyframes coverin {
-	from {background-color: transparent; left: -100%;}
-	to {background-color: rgba(0, 0, 0, 0.5); left: 300px;}
-}
-@keyframes coverout {
-	from {background-color: rgba(0, 0, 0, 0.5); left: 300px;}
-	to {background-color: transparent; left: -100%;}
-}
-@-webkit-keyframes moreOn {
-	0% {font-size: 35px;}
-	100% {font-size: 50px;}
-}
-@-webkit-keyframes moreOff {
-	0% {font-size: 35}
-	100% {font-size: 35px;}
-}
-@keyframes moreOn {
-	0% {font-size: 35px;}
-	100% {font-size: 50px;}
-}
-@keyframes moreOff {
-	0% {font-size: 50px;}
-	100% {font-size: 35px;}
-}
-/*Animations end*/
 /*CSS CODE FOR MOBILE*/
 @media screen and (max-width: 775px) {
     /*
         Dropdown navigation instead of sidebar
         links turn into buttons (for how-work and social)
-        fewer animations / more transitions/transformations
+        fewer animations
     */
     .home-email {
         font-size: 175%;
@@ -321,4 +265,9 @@ body {
         font-size: 35px;
         background-color: rgba(0, 145, 240, 0.9);
     }
+}
+@media screen and (max-width: 495px) {
+    /*
+        Smaller Screens
+    */
 }

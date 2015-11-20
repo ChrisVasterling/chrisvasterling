@@ -81,7 +81,7 @@ function sidebarin() {
     sidebar.style.transform = "translate(300px,0px)";
 	cover.className = "cover2";
 	cover.style.backgroundColor = "rgba(0, 0, 0, 0.0)";
-	cover.style.left = "300px";
+    cover.style.left = "300px";
     smbtnin.style.display = "none";
 	smbtnout.style.display = "block";
 	smbtnout.style.marginLeft = "0px";
@@ -96,7 +96,7 @@ function sidebarout() {
     sidebar.style.transform = "translate(0px,0px)"
     cover.className = "cover2";
 	cover.style.backgroundColor = "transparent";
-	cover.style.left = "calc(300px + 100% )";
+    cover.style.left = "-100%";
     smbtnin.style.display = "inline";
 	smbtnout.style.display = "none";
 	smbtnout.style.marginLeft = "50px";
