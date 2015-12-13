@@ -93,7 +93,7 @@ function sidebarout() {
 	var sidebar = document.getElementById("sidebar");
 	var mcontent = document.getElementById("mcontent");
 	var cover = document.getElementById("cover");
-    sidebar.style.transform = "translate(0px,0px)"
+    sidebar.style.transform = "translate(0px,0px)";
     cover.className = "cover2";
 	cover.style.backgroundColor = "transparent";
     cover.style.left = "-100%";

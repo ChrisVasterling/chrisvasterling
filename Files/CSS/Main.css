@@ -139,10 +139,16 @@ body {
 }
 .desk-list {
 	list-style: none;
-	font-size:20px;
+	font-size:25px;
 	color:rgb(255, 255, 255);
 	margin-top:5px;
 	margin-bottom: 0px;
+}
+.TSU {
+    margin-bottom:0px; 
+    /*width:50%;*/ 
+    display:block; 
+    width:calc(50% - 40px);
 }
 .tech-links {
 	text-decoration: underline;
@@ -243,6 +249,25 @@ body {
 }
 /*CSS CODE FOR MOBILE*/
 @media screen and (max-width: 775px) {
+    .work-logos {
+        display:none;
+    }
+    .home-email {
+        font-size: 175%;
+    }
+    .desk-list, .tech-links, .TSU {
+        width:100%;
+    }
+    .TSU {
+        margin-bottom:60px;
+        font-size:120%
+    }
+    .desk-list {
+        margin-top:20px;
+        font-size:120%
+    }
+}
+@media screen and (max-width: 500px) {
     /*
         Dropdown navigation instead of sidebar
         links turn into buttons (for how-work and social)
@@ -265,9 +290,4 @@ body {
         font-size: 35px;
         background-color: rgba(0, 145, 240, 0.9);
     }
-}
-@media screen and (max-width: 495px) {
-    /*
-        Smaller Screens
-    */
 }
