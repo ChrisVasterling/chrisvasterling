@@ -248,7 +248,7 @@ body {
 	cursor:pointer;
 }
 /*CSS CODE FOR MOBILE*/
-@media screen and (max-width: 775px) {
+@media screen and (max-width: 1066px) {
     .work-logos {
         display:none;
     }
