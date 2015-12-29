@@ -2,76 +2,8 @@ window.addEventListener("load", function () {
 	var smbtnout  = document.getElementById("smbtnout").style.display = "none";
 	var load_screen = document.getElementById("load_screen");
 	document.body.removeChild(load_screen);
+    slideArrow();
 });
-/*Sidebar Animation start*/
-/*
-function sidebarin() {
-	var smbtnin = document.getElementById("smbtnin");
-	var smbtnout = document.getElementById("smbtnout");
-	var sidebar = document.getElementById("sidebar");
-	var mcontent = document.getElementById("mcontent");
-	var cover = document.getElementById("cover");
-	sidebar.style.marginLeft = "0px";
-	smbtnin.style.display = "none";
-	smbtnout.style.display = "block";
-	smbtnout.style.marginLeft = "0px";
-	smbtnout.style.left = "20px";
-	//Sidebar webkit animation
-	sidebar.style.WebkitAnimationName = "sidebarin";
-	sidebar.style.WebkitAnimationDuration = "0.5s";
-	sidebar.style.animationName = "sidebarin";
-	sidebar.style.animationDuration = "0.5s";
-	//toggle button webkit animation
-	smbtnout.style.WebkitAnimationName = "sidebarbtnin";
-	smbtnout.style.WebkitAnimationDuration = "0.5s";
-	smbtnout.style.animationName = "sidebarbtnin";
-	smbtnout.style.animationDuration = "0.5s";
-	cover.style.display = "block";
-	cover.className = "cover2";
-	cover.style.backgroundColor = "rgba(0, 0, 0, 0.5)"
-	//cover webkit animation
-	cover.style.WebkitAnimationName = "coverin"
-	cover.style.WebkitAnimationDuration = ".5s"
-	cover.style.animationName = "coverin"
-	cover.style.animationDuration = ".5s"
-	//mcontent.style.animationName = "mcontentin";
-	//mcontent.style.animationDuration = "0.5s";
-	//mcontent.style.marginLeft = "300px";
-}
-function sidebarout() {
-	var smbtnin = document.getElementById("smbtnin");
-	var smbtnout = document.getElementById("smbtnout");
-	var sidebar = document.getElementById("sidebar");
-	var mcontent = document.getElementById("mcontent");
-	var cover = document.getElementById("cover");
-	sidebar.style.marginLeft = "-300px";
-	smbtnin.style.display = "inline";
-	smbtnout.style.display = "none";
-	smbtnout.style.marginLeft = "50px";
-	//Sidebar webkit animation
-	sidebar.style.WebkitAnimationName = "sidebarout";
-	sidebar.style.WebkitAnimationDuration = "0.5s";
-	sidebar.style.animationName = "sidebarout";
-	sidebar.style.animationDuration = "0.5s";
-	//toggle button webkit animation
-	smbtnin.style.WebkitAnimationName = "sidebarbtnout";
-	smbtnin.style.WebkitAnimationDuration = "0.5s";
-	smbtnin.style.animationName = "sidebarbtnout";
-	smbtnin.style.animationDuration = "0.5s";
-	cover.className = "cover2";
-	cover.style.backgroundColor = "transparent";
-	//cover webkit animation
-	cover.style.WebkitAnimationName = "coverout";
-	cover.style.WebkitAnimationDuration = ".5s";
-	cover.style.animationName = "coverout";
-	cover.style.animationDuration = ".5s";
-	setTimeout(function(){cover.style.display = "none"; }, 500)
-	//mcontent.style.animationName = "mcontentout";
-	//mcontent.style.animationDuration = "0.5s";
-	//mcontent.style.marginLeft = "0px";
-}
-*/
-/*Sidebar Animations end*/
 function sidebarin() {
     var smbtnin = document.getElementById("smbtnin");
 	var smbtnout = document.getElementById("smbtnout");
@@ -100,4 +32,29 @@ function sidebarout() {
     smbtnin.style.display = "inline";
 	smbtnout.style.display = "none";
 	smbtnout.style.marginLeft = "50px";
+}
+function slideArrow() {
+    var WS1 = document.getElementById("WS1");
+    var wsBtn1 = document.getElementById("wsBtn1");
+    var WS2 = document.getElementById("WS2");
+    var wsBtn2 = document.getElementById("wsBtn2");
+    var WS3 = document.getElementById("WS3");
+    var wsBtn3 = document.getElementById("wsBtn3");
+    var WS4 = document.getElementById("WS4");
+    var wsBtn4 = document.getElementById("wsBtn4");
+    var WS5 = document.getElementById("WS5");
+    var wsBtn5 = document.getElementById("wsBtn5");
+    var moveDist = 220;
+    wsBtn1.addEventListener("click", function () {
+        var i1 = document.getElementById("Identifier1");
+        if (i1.innerHTML == "off") {
+            WS1.style.transform = "translate(0px,-"+ moveDist +"px)"
+            wsBtn1.style.transform = "rotate(180deg)"
+            i1.innerHTML = "on"
+        } else if (i1.innerHTML == "on") {
+            WS1.style.transform = "translate(0px,0px)"
+            wsBtn1.style.transform = "rotate(0deg)"
+            i1.innerHTML = "off"
+        }
+    });
 }
