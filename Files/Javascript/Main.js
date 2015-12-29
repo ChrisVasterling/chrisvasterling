@@ -36,29 +36,33 @@ function sidebarout() {
 function slideArrow() {
     var WS1 = document.getElementById("WS1"),
         wsBtn1 = document.getElementById("wsBtn1"),
+        t1 = document.getElementById("trigger1"),
         WS2 = document.getElementById("WS2"),
         wsBtn2 = document.getElementById("wsBtn2"),
+        t2 = document.getElementById("trigger2"),
         WS3 = document.getElementById("WS3"),
         wsBtn3 = document.getElementById("wsBtn3"),
+        t3 = document.getElementById("trigger3"),
         WS4 = document.getElementById("WS4"),
         wsBtn4 = document.getElementById("wsBtn4"),
+        t4 = document.getElementById("trigger4"),
         WS5 = document.getElementById("WS5"),
         wsBtn5 = document.getElementById("wsBtn5"),
+        t5 = document.getElementById("trigger5"),
         moveDist = 220;
-    wsBtn1.addEventListener("click", function () {
+    t1.addEventListener("click", function () {
         var i1 = document.getElementById("Identifier1");
         if (i1.innerHTML == "off") {
             WS1.style.transform = "translate(0px,-"+ moveDist +"px)"
             wsBtn1.style.transform = "rotate(180deg)"
             i1.innerHTML = "on"
-        } 
-        if (i1.innerHTML == "on") {
+        } else if (i1.innerHTML == "on") {
             WS1.style.transform = "translate(0px,0px)"
             wsBtn1.style.transform = "rotate(0deg)"
             i1.innerHTML = "off"
         }
     });
-    wsBtn2.addEventListener("click", function () {
+    t2.addEventListener("click", function () {
         var i2 = document.getElementById("Identifier2");
         if (i2.innerHTML == "off") {
             WS2.style.transform = "translate(0px,-"+ moveDist +"px)"
@@ -70,7 +74,7 @@ function slideArrow() {
             i2.innerHTML = "off"
         }
     });
-    wsBtn3.addEventListener("click", function () {
+    t3.addEventListener("click", function () {
         var i3 = document.getElementById("Identifier3");
         if (i3.innerHTML == "off") {
             WS3.style.transform = "translate(0px,-"+ moveDist +"px)"
@@ -82,7 +86,7 @@ function slideArrow() {
             i3.innerHTML = "off"
         }
     });
-    wsBtn4.addEventListener("click", function () {
+    t4.addEventListener("click", function () {
         var i4 = document.getElementById("Identifier1");
         if (i4.innerHTML == "off") {
             WS4.style.transform = "translate(0px,-"+ moveDist +"px)"
@@ -94,7 +98,7 @@ function slideArrow() {
             i4.innerHTML = "off"
         }
     });
-    wsBtn5.addEventListener("click", function () {
+    t5.addEventListener("click", function () {
         var i5 = document.getElementById("Identifier1");
         if (i5.innerHTML == "off") {
             WS5.style.transform = "translate(0px,-"+ moveDist +"px)"
