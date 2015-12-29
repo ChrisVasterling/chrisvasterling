@@ -51,7 +51,8 @@ function slideArrow() {
             WS1.style.transform = "translate(0px,-"+ moveDist +"px)"
             wsBtn1.style.transform = "rotate(180deg)"
             i1.innerHTML = "on"
-        } else if (i1.innerHTML == "on") {
+        } 
+        if (i1.innerHTML == "on") {
             WS1.style.transform = "translate(0px,0px)"
             wsBtn1.style.transform = "rotate(0deg)"
             i1.innerHTML = "off"
