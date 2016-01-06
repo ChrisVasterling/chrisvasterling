@@ -56,7 +56,12 @@ body {
 .example {
     width: 60%;
     margin-left: calc(50% - 30%);
-    background-color: purple;
+    //background-color: purple;
+}
+.exImg {
+    width:50%;
+    margin:0px;
+    transition: opacity 0.2s ease-in-out;
 }
 @media screen and (max-width: 980px) {
     /*touch/mobile friendly*/
