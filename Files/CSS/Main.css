@@ -1,68 +1,107 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300,400,500,700);
-body {
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,500);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+html, body {
 	margin:0px;
 	padding:0px;
     font-family: Lato;
     font-weight: 300;
+    height: 100%;
+}
+a {
+    color:blue;
+}
+a:hover {
+    color:blue;
+}
+a:visited {
+    color:blue;
 }
 .top {
-    //background-color:red;
+    position: relative;
     width:100%;
-    background-image: url(../Images/bk/Hero.jpg);
+    height:80%;
+    //height:auto;
+    min-height:/*TBD*/;
+    background-image: url("../Images/bk/Hero.jpg");
     background-position: cover;
 }
-.face {
-    width:150px;
-    border-radius: 50%;
-    margin-top:10px;
-    margin-bottom: 10px;
-    margin-left: calc(50% - 75px)
-}
 .nav {
-    margin-top:calc(100px - 17px);
-    //background-color: purple;
+    width: 100%;
+    height:auto;
     text-align: center;
+    position: relative;
+    bottom: 20px;
+    top:2%;
 }
-.navBtn {
+.navBtn, .prev, .next {
     border:2px solid white;
     background-color: rgba(1000, 1000, 1000, 0.1);
     font-size:20px;
     font-family: Lato;
     font-weight: 400;
     margin-right:10px;
-    margin-right:10px;
-    margin-bottom:20px;
     padding:5px;
     cursor:pointer;
-    transition: background-color 0.2s ease-out;
+    outline:none;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out;
 }
-.navBtn:hover {
+.navBtn:hover, .prev:hover, .next:hover {
     background-color: rgba(1000, 1000, 1000, 1);
 }
 .name {
+    background-color:rgba(1000, 1000, 1000, 0.4);
+    width:90%;
+    position: relative;
+    top:10%;
+    left:5%;
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: 300;
+    text-align: center
+}
+.content {
+    width: 100%;
+    height:auto;
+    font-size: 30px;
     text-align: center;
-    margin-left: calc(50% - 490px);
-    font-weight: 700; 
-    font-size: 17px;
-    width:980px;
-    background-color: rgba(1000, 1000, 1000, 0.4);
+    font-family: Lato;
+    font-weight: 300;
+    background-color: rgba(200, 200, 200, 0.5);
 }
 .websites {
-    width:100%;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-    text-align: center;
+    padding-top: 20px;
 }
-.example {
-    width: 60%;
-    margin-left: calc(50% - 30%);
-    //background-color: purple;
+.slideshow {
+    width:80%;
+    height: auto;
+    margin-left:10%;
+    margin-top:20px;
 }
-.exImg {
+.slides {
+    font-size: 20px;
+    height:auto;
+}
+.slides > img {
+    display:block;
     width:50%;
-    margin:0px;
-    transition: opacity 0.2s ease-in-out;
+    margin-top:10px;
+    margin-left: calc(50% - 25%);
 }
-@media screen and (max-width: 980px) {
-    /*touch/mobile friendly*/
+.slides > p {
+    width:120%;
+    margin-left:-10%;
+    margin-right: 10%;
+}
+.controls {
+    margin-left:calc(50% - 25%);
+    margin-right: calc(50% - 25%);
+}
+.prev, .next {
+    width:40%;
+    margin:0px;
+    border:2px solid black;
+}
+.prev:hover, .next:hover {
+    color:white;
+    background-color: black;
 }
