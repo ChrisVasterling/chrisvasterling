@@ -9,13 +9,15 @@
     </head>
     <body>
         <div class="top">
-            <video autoplay="true" muted="true" loop="true" controls="false">
-                <source src="Files/Videos/bk.mp4" type="video/mp4"/>
-            </video>
+            <div class="bk">
+                <video autoplay="true" muted="true" loop="true" controls="false">
+                    <source src="Files/Videos/bk.mp4" type="video/mp4"/>
+</video>
+            </div>
             <div class="nav">
                 <a href="#websites" ><button class="navBtn">Websites</button></a>
-                <a href="#projects"><button class="navBtn">Projects</button></a>
-                <a href=""><button class="navBtn">Technology</button></a>
+                <!--<a href="#projects"><button class="navBtn">Projects</button></a>-->
+                <a href="#tech"><button class="navBtn">Technology</button></a>
                 <a href=""><button class="navBtn">Contact</button></a>
             </div>
             <p class="name">
@@ -26,7 +28,9 @@
         <div class="content">
             <div class="websites">
                 <a name="websites"></a>
-                Websites
+                <p style="margin:0px; padding:0px;">
+                    Websites
+                </p>
                 <div class="slideshow">
                     <div class="controls">
                         <button class="prev" id="prev">Previous</button>
@@ -63,11 +67,63 @@
                     </div>
                 </div>
             </div>
-            <div class="projects">
-                <a name="projects"></a>
-                Personal Projects
-                <br/>
+            <div class="tech">
+                <a name="tech"></a>
+                <p style="margin:0px; padding:0px;">
+                    Technology I Use
+                    <p style="font-size: 15px">Click a Logo to view some info.</p>
+                </p>
+                <div class="tiles">
+                    <div class="tile" id="td1" onClick="tileUp(this.id)">
+                        <img src="Files/Images/work-icon/brackets.png" class="tileImg"/>
+                        <div class="tileDesc" id="td1t" >
+                            Brackets
+                            is a code editor built by Adobe for web design.
+                        </div>
+                        <div id="td1tg" style="display:none">1</div>
+                    </div>
+                    <div class="tile" id="td2" onClick="tileUp(this.id)">
+                        <img src="Files/Images/work-icon/GitHub.png" class="tileImg"/>
+                        <div class="tileDesc" id="td2t" >
+                            GitHub
+                            is where people host source code for their 
+                            programs/projects. It can also be used to 
+                            host websites.
+                        </div>
+                        <div id="td2tg" style="display:none">1</div>
+                    </div>
+                    <div class="tile" id="td3" onClick="tileUp(this.id)">
+                        <img src="Files/Images/work-icon/weebly.png" class="tileImg"/>
+                        <div class="tileDesc" id="td3t" >
+                            Weebly
+                            is a website builder that I use to simplify a url.
+                            <i>website.weebly.com</i>
+                        </div>
+                        <div id="td3tg" style="display:none">1</div>
+                    </div>
+                    <div class="tile" id="td4" onClick="tileUp(this.id)">
+                        <img src="Files/Images/work-icon/Win.png" class="tileImg"/>
+                        <div class="tileDesc" id="td4t" >
+                            I use Windows 10
+                            as my choice of an operating system.
+                        </div>
+                        <div id="td4tg" style="display:none">1</div>
+                    </div>
+                </div>
             </div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <br/>
             <br/>
             <br/>

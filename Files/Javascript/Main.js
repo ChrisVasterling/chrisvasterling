@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-	slideShow()
+	slideShow();
 });
 function slideShow() {
     var slide1 = document.getElementById("slide1"),
@@ -99,4 +99,17 @@ function slideShow() {
             console.log("Hello")
         } 
     }
+}
+function tileUp(tile_id) {
+    var id = document.getElementById(tile_id + "t");
+    var toggle = document.getElementById(tile_id + "tg")
+    id.style.transition = "transform 0.2s ease-in-out";
+    if (toggle.innerHTML == "1") {
+        id.style.transform = "translateY(-210px)";
+        toggle.innerHTML = "0"
+    } else if (toggle.innerHTML == 0) {
+        id.style.transform = "translateY(0px)";
+        toggle.innerHTML = "1";
+    }
+    
 }
