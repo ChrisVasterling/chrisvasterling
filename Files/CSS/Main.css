@@ -73,6 +73,9 @@ a:visited {
     background-color: rgba(1000, 1000, 1000, 1);
     border: 2px solid black;
 }
+.mobileNav {
+    display:none;
+}
 .name {
     background-color:rgba(1000, 1000, 1000, 0.4);
     width:90%;
@@ -162,6 +165,7 @@ a:visited {
     //background-color: blue;
     display:inline-block;
     overflow: hidden;
+    //border-radius: 10px;
 }
 .tileImg {
     width: 200px;
@@ -174,14 +178,89 @@ a:visited {
     position: relative;
     //top: -210px;
     top: 0px;
-    width: 200px;
+    width:50%;
+    margin-left: 25%;
     height: 210px;
     padding:0px;
     padding-top: 10px;
     background-color: rgba(200, 75, 100, 0.9);
     color:black;
     font-size: 18px;
+    font-weight: 300;
+    overflow: hidden;
 }
-.tileDesc:hover {
-    cursor: pointer;
+.tileDesc > p {
+    padding:0px;
+    margin:0px;
+}
+.mMenu {
+    display:none
+}
+@media screen and (max-width: 1000px) {
+    .slideshow {
+        width:100%;
+        margin-left:0px;
+    }
+    .slides > img {
+        width: 80%;
+        margin-left:10%;
+    }
+    .slides > p {
+        width:100%;
+        margin-left:0px;
+        margin-right:0px;
+        text-align: center;
+    }
+    .next, .prev {
+        width: calc(50% - 28px);
+    }
+    .controls {
+        width:100%;
+        margin-left:0px;
+        margin-right:0px;
+    }
+    .tiles {
+        width:100%;
+    }
+    .name {
+        width:100%;
+        left:0px;
+    }
+    .nav {
+        display:none;
+    }
+    .mobileNav {
+        position:relative;
+        //top:-274px;
+        transform: translateY(-274px);
+        left:0px;
+        display:block;
+        height:auto;
+        width:100%;
+        z-index:2;
+        font-family: Lato;
+        background-color: rgba(75, 75, 200, 0.3);
+        border:2px solid white;
+        border-left:0px;
+        border-right:0px;
+    }
+    .navBtn {
+        width:calc(100% - 54px);
+        margin: 20px;
+    }
+    .mMenu {
+        width:25%;
+        height:35px;
+        display:block;
+        margin-left: calc(12.5% + 25%);
+        font-size:20px;
+        border:2px solid white;
+        border-top: 2px solid tranparent;
+        background-color: rgba(75, 75, 200, 0.3);
+        padding:5px;
+        outline:none;
+        position: relative;
+        top: 35px;
+        cursor:pointer;
+    }
 }

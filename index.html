@@ -6,6 +6,7 @@
         <link rel="icon" href="Files/Images/icon.ico">
         <link rel="prefetch" href="Files/Images/Slideshow/websites/longfellow.png">
         <script src="Files/Javascript/Main.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div class="top">
@@ -19,6 +20,14 @@
                 <!--<a href="#projects"><button class="navBtn">Projects</button></a>-->
                 <a href="#tech"><button class="navBtn">Technology</button></a>
                 <a href=""><button class="navBtn">Contact</button></a>
+            </div>
+            <div class="mobileNav" id="mobileNav">
+                <div style="display:none" id="toggle">1</div>
+                <a href="#websites"><button class="navBtn" onclick="mMenuDown()">Websites</button></a>
+                <!--<a href="#projects"><button class="navBtn">Projects</button></a>-->
+                <a href="#tech"><button class="navBtn" onclick="mMenuDown()">Technology</button></a>
+                <a href=""><button class="navBtn" onclick="mMenuDown()">Contact</button></a>
+                <button class="mMenu" id="mMenu" onclick="mMenuDown()">Menu</button>
             </div>
             <p class="name">
                 Chris Vasterling
@@ -71,18 +80,22 @@
                 <a name="tech"></a>
                 <p style="margin:0px; padding:0px;">
                     Technology I Use
-                    <p style="font-size: 15px">Click a Logo to view some info.</p>
+                </p>
+                <p style="font-size: 15px">
+                    Click a Logo to view some info.
                 </p>
                 <div class="tiles">
-                    <div class="tile" id="td1" onClick="tileUp(this.id)">
+                    <div class="tile" id="td1" onMouseDown="tileUp(this.id)">
                         <img src="Files/Images/work-icon/brackets.png" class="tileImg"/>
                         <div class="tileDesc" id="td1t" >
-                            Brackets
-                            is a code editor built by Adobe for web design.
+                            <p is="td1Desc">
+                                Brackets
+                                is a code editor built by Adobe for web design.
+                            </p>
                         </div>
                         <div id="td1tg" style="display:none">1</div>
                     </div>
-                    <div class="tile" id="td2" onClick="tileUp(this.id)">
+                    <div class="tile" id="td2" onMouseDown="tileUp(this.id)">
                         <img src="Files/Images/work-icon/GitHub.png" class="tileImg"/>
                         <div class="tileDesc" id="td2t" >
                             GitHub
@@ -92,7 +105,7 @@
                         </div>
                         <div id="td2tg" style="display:none">1</div>
                     </div>
-                    <div class="tile" id="td3" onClick="tileUp(this.id)">
+                    <div class="tile" id="td3" onMouseDown="tileUp(this.id)">
                         <img src="Files/Images/work-icon/weebly.png" class="tileImg"/>
                         <div class="tileDesc" id="td3t" >
                             Weebly
@@ -101,7 +114,7 @@
                         </div>
                         <div id="td3tg" style="display:none">1</div>
                     </div>
-                    <div class="tile" id="td4" onClick="tileUp(this.id)">
+                    <div class="tile" id="td4" onMouseDown="tileUp(this.id)">
                         <img src="Files/Images/work-icon/Win.png" class="tileImg"/>
                         <div class="tileDesc" id="td4t" >
                             I use Windows 10
