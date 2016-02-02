@@ -29,7 +29,6 @@ a:visited {
     width:100%;
     height:80%;
     //height:auto;
-    min-height:/*TBD*/;
     /*
     background-image: url("../Images/bk/Hero.jpg");
     background-size: cover;
@@ -196,6 +195,9 @@ a:visited {
 .mMenu {
     display:none
 }
+.mLogo {
+    display:none;
+}
 @media screen and (max-width: 1000px) {
     .slideshow {
         width:100%;
@@ -225,6 +227,9 @@ a:visited {
     .name {
         width:100%;
         left:0px;
+        margin:0px;
+        top:40px;
+        display:none;
     }
     .nav {
         display:none;
@@ -262,5 +267,13 @@ a:visited {
         position: relative;
         top: 35px;
         cursor:pointer;
+    }
+    .mLogo {
+        position:relative;
+        left: 50%;
+        top:40px;
+        transform: translateX(-50%);
+        display:block;
+        height:25%;
     }
 }
