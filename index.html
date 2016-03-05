@@ -2,155 +2,94 @@
 <html>
     <head>
         <title>Chris Vasterling</title>
-        <link rel="stylesheet" type="text/css" href="Files/CSS/Main.css">
-        <link rel="icon" href="Files/Images/icon.ico">
-        <link rel="prefetch" href="Files/Images/Slideshow/websites/longfellow.png">
-        <script src="Files/Javascript/Main.js"></script>
+        <link rel="stylesheet" href="Files/css/main.css">
+        <link rel="icon" href="Files/img/icon.ico">
+        <script src="Files/js/main.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div class="top">
-            <div class="bk">
-                <video autoplay="true" muted="true" loop="true" controls="false">
-                    <source src="Files/Videos/bk.mp4" type="video/mp4"/>
-</video>
+            <div class="menuToggle" id="menuToggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
             </div>
-            <div class="nav">
-                <a href="#websites" ><button class="navBtn">Websites</button></a>
-                <!--<a href="#projects"><button class="navBtn">Projects</button></a>-->
-                <a href="#tech"><button class="navBtn">Technology</button></a>
-                <a href=""><button class="navBtn">Contact</button></a>
+            <p class="name">Chris Vasterling</p>
+            <div class="quickAccess">
+                Quick access items?
             </div>
-            <div class="mobileNav" id="mobileNav">
-                <div style="display:none" id="toggle">1</div>
-                <a href="#websites"><button class="navBtn" onclick="mMenuDown()">Websites</button></a>
-                <!--<a href="#projects"><button class="navBtn">Projects</button></a>-->
-                <a href="#tech"><button class="navBtn" onclick="mMenuDown()">Technology</button></a>
-                <a href=""><button class="navBtn" onclick="mMenuDown()">Contact</button></a>
-                <button class="mMenu" id="mMenu" onclick="mMenuDown()">Menu</button>
-            </div>
-            <p class="name">
-                Chris Vasterling
-                <img src="Files/Images/logo.png" class="logo"/>
-            </p>
-            <!--<img src="Files/Images/logo.png" class="mLogo"/>-->
         </div>
-        <div class="content">
-            <div class="websites">
-                <a name="websites"></a>
-                <p style="margin:0px; padding:0px;">
-                    Websites
-                </p>
-                <div class="slideshow">
-                    <div class="controls">
-                        <button class="prev" id="prev">Previous</button>
-                        <button class="next" id="next">Next</button>
-                    </div>
-                    <div class="slides" id="slide1">
-                        <img src="Files/Images/Slideshow/websites/delong.png"/>
-                        <p>
-                            <a href="http://chrisvasterling.github.io/delongyearbooks/Homepage.html" target="_blank">DeLong Yearbooks</a>
-                            is a website that holds an online version of my middle school yearbooks.
-                        </p>
-                    </div>
-                    <div class="slides" id="slide2">
-                        <img src="Files/Images/Slideshow/websites/longfellow.png"/>
-                        <p>
-                            <a href="http://chrisvasterling.github.io/longfellowyearbooks/Homepage.html" target="_blank">Longfellow Yearbooks</a>
-                            is a website that holds an online version of my elementary school yearbooks.
-                        </p>
-                    </div>
-                    <div class="slides" id="slide3">
-                        <p>
-                            Slide 3
-                        </p>
-                    </div>
-                    <div class="slides" id="slide4">
-                        <p>
-                            Slide 4
-                        </p>
-                    </div>
-                    <div class="slides" id="slide5">
-                        <p>
-                            Slide 5
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="tech">
-                <a name="tech"></a>
-                <p style="margin:0px; padding:0px;">
-                    Technology I Use
-                </p>
-                <p style="font-size: 15px">
-                    Click a Logo to view some info.
-                </p>
-                <div class="tiles">
-                    <div class="tile" id="td1" onMouseDown="tileUp(this.id)">
-                        <img src="Files/Images/work-icon/brackets.png" class="tileImg"/>
-                        <div class="tileDesc" id="td1t" >
-                            <p is="td1Desc">
-                                Brackets
-                                is a code editor built by Adobe for web design.
-                            </p>
-                        </div>
-                        <div id="td1tg" style="display:none">1</div>
-                    </div>
-                    <div class="tile" id="td2" onMouseDown="tileUp(this.id)">
-                        <img src="Files/Images/work-icon/GitHub.png" class="tileImg"/>
-                        <div class="tileDesc" id="td2t" >
-                            GitHub
-                            is where people host source code for their 
-                            programs/projects. It can also be used to 
-                            host websites.
-                        </div>
-                        <div id="td2tg" style="display:none">1</div>
-                    </div>
-                    <div class="tile" id="td3" onMouseDown="tileUp(this.id)">
-                        <img src="Files/Images/work-icon/weebly.png" class="tileImg"/>
-                        <div class="tileDesc" id="td3t" >
-                            Weebly
-                            is a website builder that I use to simplify a url.
-                            <i>website.weebly.com</i>
-                        </div>
-                        <div id="td3tg" style="display:none">1</div>
-                    </div>
-                    <div class="tile" id="td4" onMouseDown="tileUp(this.id)">
-                        <img src="Files/Images/work-icon/Win.png" class="tileImg"/>
-                        <div class="tileDesc" id="td4t" >
-                            I use Windows 10
-                            as my choice of an operating system.
-                        </div>
-                        <div id="td4tg" style="display:none">1</div>
-                    </div>
-                </div>
-            </div>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-        </div>
+        <div class="menu" id="menu">
+			Something
+			<!--------------------------------------Menu Buttons--------------------------------------->
+			<a href="#websites">
+				<button class="menuSlider">
+					Website Gallery
+				</button>
+			</a>
+			<a href="#projects">
+				<button class="menuSlider">
+					Current Projects
+				</button>
+			</a>
+			<a href="#contact">
+				<button class="menuSlider" style="margin-top:30px;">
+					Contact Information
+				</button>
+			</a>
+			<!--------------------------------------Menu Buttons--------------------------------------->
+		</div>
+        <div class="cover" id="cover"></div>
+		<a name="websites"></a>
+		<div class="websites">
+			<div class="slideshow">
+				<div class="controls">
+					<button class="slideBtn" style="float:left" id="prev">Previous</button>
+					<button class="slideBtn" id="next">Next</button>
+				</div>
+				<!-----------------Slides----------------->
+				<div class="slide" id="slide1">
+					<img src="Files/img/Slideshow/websites/delong.png" class="slideImg">
+					<div class="slideDesc">
+						<a href="http://delongyearbooks.weebly.com" target="_blank">DeLong Yearbooks</a>
+						is a website that holds online versions of my middle school yearbooks.
+						<p style="margin:0px; padding:0px; margin-top:10px;">
+						Fun Fact #1 - This is the first website that I made completley from scratch.
+						</p>
+					</div>
+				</div>
+				<div class="slide" id="slide2">
+					<img src="Files/img/Slideshow/websites/longfellow.png" class="slideImg">
+					<div class="slideDesc">
+						<a href="http://longfellowyearbooks.weebly.com" target="_blank">Longfellow Yearbooks</a>
+						is a website that holds online versions of my elementary school yearbooks.
+						<p style="margin:0px; padding:0px; margin-top:10px;">
+						Fun Fact #2 - This is my second website that I made completley from scratch.
+						</p>
+					</div>
+				</div>
+				<div class="slide" id="slide3">
+					<div class="slideDesc">
+						Slide 3
+					</div>
+				</div>
+				<div class="slide" id="slide4">
+					<div class="slideDesc">
+						Slide 4
+					</div>
+				</div>
+				<div class="slide" id="slide5">
+					<div class="slideDesc">
+						Slide 5
+					</div>
+				</div>
+				<!-----------------Slides----------------->
+			</div>
+		</div>
+		<div class="projects">Projects</div>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <!--Start of HTML var's-->
+        <div style="display:none" id="menuNum">1</div>
+        <!--End of HTML var's-->
     </body>
 </html>

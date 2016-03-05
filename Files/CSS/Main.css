@@ -1,279 +1,166 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300,400,500);
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300);
 html, body {
 	margin:0px;
 	padding:0px;
     font-family: Lato;
     font-weight: 300;
     height: 100%;
+    overflow-x: hidden;
 }
 a {
-    color:blue;
-}
-a:hover {
-    color:blue;
+	text-decoration: none;
+	color: blue;
 }
 a:visited {
-    color:blue;
+	text-decoration: none;
+	color:blue;
 }
-.bk {
-    position: absolute;
-    width:100%;
-    height: 100%;
-    background-image: url(../Images/bk/Hero.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+button {
+	outline: none;
 }
 .top {
     position: relative;
     width:100%;
-    height:80%;
-    //height:auto;
-    /*
-    background-image: url("../Images/bk/Hero.jpg");
-    background-size: cover;
+    height: auto;
+    min-height:50%;
+    background-image:url(../img/bk/how-work.jpg);
     background-repeat: no-repeat;
-    */
-    overflow: hidden;
+    background-size: cover;
+    background-position: 50% 50%;
+	border-bottom: 20px solid rgba(0, 0, 100, 1);
 }
-/******************/
-.top > .bk > video {
+.quickAccess {
+    width:100%;
+    height:10%;
+    min-height:50px;
     position:absolute;
-    object-fit: cover;
-    z-index: 0;
-    display:none;
-}
-/******************/
-.nav {
-    width: 100%;
-    height:auto;
+    top:90%;
+    background-color: rgba(0, 0, 100, 1);
     text-align: center;
-    position: relative;
-    bottom: 20px;
-    top:2%;
-    z-index:2;
-}
-.navBtn {
-    width: 120px;
-}
-.navBtn, .prev, .next {
-    border:2px solid white;
-    background-color: rgba(1000, 1000, 1000, 0.1);
-    font-size:20px;
-    font-family: Lato;
-    font-weight: 400;
-    margin-right:10px;
-    padding:5px;
-    cursor:pointer;
-    outline:none;
-    transition: background-color 0.2s ease-out, color 0.2s ease-out, border 0.2s ease-out;
-}
-.navBtn:hover, .prev:hover, .next:hover {
-    background-color: rgba(1000, 1000, 1000, 1);
-    border: 2px solid black;
-}
-.mobileNav {
-    display:none;
-}
-.name {
-    background-color:rgba(1000, 1000, 1000, 0.4);
-    width:90%;
-    position: relative;
-    top:10%;
-    left:5%;
-    font-family: Roboto;
-    font-size: 40px;
-    font-weight: 300;
-    text-align: center;
-    z-index:2;
-}
-.logo {
-    position:relative;
-    top:5px;
-    height:40px;
-}
-.content {
-    width: 100%;
-    height:auto;
-    font-size: 35px;
-    text-align: center;
-    font-family: Lato;
-    font-weight: 400;
-    background-color: rgba(200, 200, 200, 0.5);
-}
-.websites {
-    padding-top: 25px;
-    padding-bottom:25px;
-    height: auto;
-}
-.slideshow {
-    width:80%;
-    height: auto;
-    margin-left:10%;
-    margin-top:20px;
-}
-.slides {
-    font-size: 20px;
-    height:auto;
-}
-.slides > img {
-    display:block;
-    width:50%;
-    margin-top:10px;
-    margin-left: calc(50% - 25%);
-}
-.slides > p {
-    width:120%;
-    margin-left:-10%;
-    margin-right: 10%;
-    font-weight: 300;
-}
-.controls {
-    margin-left:calc(50% - 25%);
-    margin-right: calc(50% - 25%);
-}
-.prev, .next {
-    width:40%;
-    margin:0px;
-    border:2px solid black;
-    font-family: Roboto;
-    font-weight: 400;
-}
-.prev:hover, .next:hover {
     color:white;
+	display:none;
+}
+.menuToggle {
+    position:relative;
+    top:15px;
+    left:15px;
+    display:inline-block;
+    padding:3px;
+    background-color:transparent;
+    cursor:pointer;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+}
+.menuToggle:hover {
+    //background-color:rgba(255, 255, 255, 0.6);
     background-color: black;
 }
-.tech {
-    padding-top: 25px;
-    padding-bottom:25px;
-    height: auto;
+.menuToggle > .bar {
+    width:25px;
+    height:2px;
+    display:block;
+    margin: 5px 5px;
+    background-color: white;
 }
-.tiles {
-    width: auto;
-    height: 100%;
-    margin-top:20px;
-    display:inline-block;
-    //background-color: red;
-}
-.tile {
-    width: 200px;
-    height: 200px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 0px;
-    //background-color: blue;
-    display:inline-block;
-    overflow: hidden;
-    //border-radius: 10px;
-}
-.tileImg {
-    width: 200px;
-    height: 200px; /*257*/
-}
-.tileImg:hover {
-    cursor: pointer;
-}
-.tileDesc {
-    position: relative;
-    //top: -210px;
-    top: 0px;
-    width:50%;
-    margin-left: 25%;
-    height: 210px;
-    padding:0px;
-    padding-top: 10px;
-    background-color: rgba(200, 75, 100, 0.9);
-    color:black;
-    font-size: 18px;
+.name {
+    position: absolute;
+    top:calc(50% - 10%);
+    left:50%;
+    display:inline;
+    transform: translateX(-50%);
+    font-size:40px;
     font-weight: 300;
-    overflow: hidden;
-}
-.tileDesc > p {
-    padding:0px;
+	font-family: Raleway;
+    background-color: rgba(255, 255, 255, .6);
+    width:90%;
+    text-align: center;
     margin:0px;
+    padding: 5px 0px 5px 0px;
 }
-.mMenu {
-    display:none
+.menu {
+    width:300px;
+    max-width:70%;
+    height:100%;
+    position: absolute;
+    top:0px;
+    left:-300px;
+    background-color: rgb(245, 245, 245);
+    z-index: 10;
+    transform: translateZ();
+    transition: left 0.17s linear;
 }
-.mLogo {
+.cover {
     display:none;
+    background-color: transparent;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width: 100%;
+    z-index: 9;
 }
-@media screen and (max-width: 1000px) {
-    .slideshow {
-        width:100%;
-        margin-left:0px;
-    }
-    .slides > img {
-        width: 80%;
-        margin-left:10%;
-    }
-    .slides > p {
-        width:100%;
-        margin-left:0px;
-        margin-right:0px;
-        text-align: center;
-    }
-    .next, .prev {
-        width: calc(50% - 28px);
-    }
-    .controls {
-        width:100%;
-        margin-left:0px;
-        margin-right:0px;
-    }
-    .tiles {
-        width:100%;
-    }
-    .name {
-        width:100%;
-        left:0px;
-        margin:0px;
-        top:40px;
-        display:none;
-    }
-    .nav {
-        display:none;
-    }
-    .mobileNav {
-        position:relative;
-        //top:-274px;
-        transform: translateY(-274px);
-        left:0px;
-        display:block;
-        height:auto;
-        width:100%;
-        z-index:2;
-        font-family: Lato;
-        background-color: rgba(75, 75, 200, 0.3);
-        border:2px solid white;
-        border-left:0px;
-        border-right:0px;
-    }
-    .navBtn {
-        width:calc(100% - 54px);
-        margin: 20px;
-    }
-    .mMenu {
-        width:25%;
-        height:35px;
-        display:block;
-        margin-left: calc(12.5% + 25%);
-        font-size:20px;
-        border:2px solid white;
-        border-top: 2px solid tranparent;
-        background-color: rgba(75, 75, 200, 0.3);
-        padding:5px;
-        outline:none;
-        position: relative;
-        top: 35px;
-        cursor:pointer;
-    }
-    .mLogo {
-        position:relative;
-        left: 50%;
-        top:40px;
-        transform: translateX(-50%);
-        display:block;
-        height:25%;
-    }
+.menuSlider {
+	width:100%;
+	height: 10%;
+	min-height: 70px;
+	background-color: rgb(225, 225, 225);
+	margin-top:10px;
+	margin-bottom:10px;
+	transition: background-color 0.2s ease-out, border 0.2s ease-out;
+	font-size:25px;
+	font-weight: 300;
+	font-family: Lato;
+	border:0px;
+	border-bottom: 5px solid transparent;
+	z-index: 1;
+}
+.menuSlider:hover {
+	background-color: rgb(205, 205, 205);
+	cursor:pointer;
+	border-bottom: 5px solid rgba(0, 0, 100, 1);
+}
+.websites {
+	width:100%;
+}
+.slideshow {
+	width:70%;
+	height:auto;
+	margin-left:calc(30% / 2);
+	margin-top:25px;	
+}
+.controls {
+	width:70%;
+	height:auto;
+	margin-left:50%;
+	transform: translateX(-50%);
+}
+.slideBtn {
+	width:50%;
+	border:0px;
+	border-bottom: 5px solid transparent;
+	font-size: 25px;
+	font-family: Lato;
+	font-weight: 300;
+	padding:10px;
+	background-color: rgb(225, 225, 225);
+	transition: background-color 0.2s ease-out, border 0.2s ease-out;
+}
+.slideBtn:hover {
+	border-bottom: 5px solid rgba(0, 0, 100, 1);
+	background-color: rgb(205, 205, 205);
+	cursor:pointer;
+}
+.slide {
+	width: 70%;
+	height:auto;
+	margin-left:50%;
+	transform: translateX(-50%);
+}
+.slideImg {
+	width:100%;
+}
+.slideDesc {
+	text-align:center;
+	font-size: 19px;
 }
