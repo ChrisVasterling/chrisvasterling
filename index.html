@@ -7,9 +7,9 @@
         <script src="Files/js/main.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+    <body id="body">
         <div class="top">
-            <div class="menuToggle" id="menuToggle">
+            <div class="menuToggle" onmousedown="slideMenuOut(this.id)" id="menuBtn">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -19,28 +19,33 @@
                 Quick access items?
             </div>
         </div>
-        <div class="menu" id="menu">
-			Something
+        <div class="menu" id="menuBtnSlide">
+			<p style="margin: 10px 0px 0px 0px; font-size: 30px; text-align:center;">
+			Chris Vasterling
+			</p>
 			<!--------------------------------------Menu Buttons--------------------------------------->
-			<a href="#websites">
-				<button class="menuSlider">
+			<a href="#web">
+				<button class="menuSlider" style="margin-top:20px;" onclick="slideMenuIn()">
 					Website Gallery
 				</button>
 			</a>
-			<a href="#projects">
-				<button class="menuSlider">
+			<a href="#project">
+				<button class="menuSlider" onclick="slideMenuIn()">
 					Current Projects
 				</button>
 			</a>
 			<a href="#contact">
-				<button class="menuSlider" style="margin-top:30px;">
+				<button class="menuSlider" style="margin-top:30px;" onclick="slideMenuIn()">
 					Contact Information
 				</button>
 			</a>
 			<!--------------------------------------Menu Buttons--------------------------------------->
+			<div style="text-align:center;">
+				<img src="Files/img/logo.png" style="width:25%; position:relative; top:10px; display:inline-block; margin-bottom:5px;"/>
+			</div>
 		</div>
-        <div class="cover" id="cover"></div>
-		<a name="websites"></a>
+        <div class="cover" onclick="slideMenuIn()" id="cover"></div>
+		<a id="web"></a>
 		<div class="websites">
 			<div class="slideshow">
 				<div class="controls">
@@ -53,8 +58,8 @@
 					<div class="slideDesc">
 						<a href="http://delongyearbooks.weebly.com" target="_blank">DeLong Yearbooks</a>
 						is a website that holds online versions of my middle school yearbooks.
-						<p style="margin:0px; padding:0px; margin-top:10px;">
-						Fun Fact #1 - This is the first website that I made completley from scratch.
+						<p class="funFact">
+							Fun Fact #1 - This is the first website that I made completley from scratch.
 						</p>
 					</div>
 				</div>
@@ -63,8 +68,8 @@
 					<div class="slideDesc">
 						<a href="http://longfellowyearbooks.weebly.com" target="_blank">Longfellow Yearbooks</a>
 						is a website that holds online versions of my elementary school yearbooks.
-						<p style="margin:0px; padding:0px; margin-top:10px;">
-						Fun Fact #2 - This is my second website that I made completley from scratch.
+						<p class="funFact">
+							Fun Fact #2 - This is my second website that I made completley from scratch.
 						</p>
 					</div>
 				</div>
@@ -86,7 +91,86 @@
 				<!-----------------Slides----------------->
 			</div>
 		</div>
-		<div class="projects">Projects</div>
+		<a id="project"></a>
+		<div class="projects">
+			<div class="tiles">
+				<!---------------------------Tiles Start------------------------------>
+				<div class="tile">
+					<p class="tileName">Website Projects</p>
+					<img src="Files/img/work-icon/icons/html.png" class="tileImg"/>
+					<div class="slideUp" onclick="sliderUp(this.id)" id="slide1">
+						<img src="Files/img/arrow-up.png" style="height: 100%;"/>
+					</div>
+					<div class="tileDesc" id="slide1d">
+						<div class="slideUp" onclick="sliderDown(this.id)" id="slide1">
+							<img src="Files/img/arrow-down.png" style="height: 100%;"/>
+						</div>
+						I am currently not working on any websites other than this one.
+					</div>
+				</div>
+				<!-------------------------------------------------------------------->
+				<div class="tile">
+					<p class="tileName">Mobile Apps</p>
+					<img src="Files/img/work-icon/icons/code.png" class="tileImg"/>
+					<div class="slideUp" onclick="sliderUp(this.id)" id="slide2">
+						<img src="Files/img/arrow-up.png" style="height: 100%;"/>
+					</div>
+					<div class="tileDesc" id="slide2d">
+						<div class="slideUp" onclick="sliderDown(this.id)" id="slide2">
+							<img src="Files/img/arrow-down.png" style="height: 100%;"/>
+						</div>
+						I am in a class that is teaching us a programming language 
+						based off of BASIC that allows us to "Code once and deploy everywhere". 
+						The software we use to do this is 
+						<a href="http://appgamekit.com" target="blank">AGK</a>. 
+					</div>
+				</div>
+				<!-------------------------------------------------------------------->
+				<div class="tile">
+					<p class="tileName">Education</p>
+					<img src="Files/img/work-icon/icons/school.png" class="tileImg"/>
+					<div class="slideUp" onclick="sliderUp(this.id)" id="slide3">
+						<img src="Files/img/arrow-up.png" style="height: 100%;"/>
+					</div>
+					<div class="tileDesc" id="slide3d">
+						<div class="slideUp" onclick="sliderDown(this.id)" id="slide3">
+							<img src="Files/img/arrow-down.png" style="height: 100%;"/>
+						</div>
+						I am currently a Freshmen in High School. I am earning college credit
+						through a class that my school offers. My goal for high school is to
+						try my best to learn more about the subjects I actually like (computers
+						and technology).
+					</div>
+				</div>
+				<!-------------------------------------------------------------------->
+				<div class="tile">
+					<p class="tileName">Personal</p>
+					<img src="Files/img/work-icon/icons/personal.png" class="tileImg"/>
+					<div class="slideUp" onclick="sliderUp(this.id)" id="slide4">
+						<img src="Files/img/arrow-up.png" style="height: 100%;"/>
+					</div>
+					<div class="tileDesc" id="slide4d">
+						<div class="slideUp" onclick="sliderDown(this.id)" id="slide4">
+							<img src="Files/img/arrow-down.png" style="height: 100%;"/>
+						</div>
+						Some personal goals I am working on are -
+						<ul style="text-align: left;">
+							<li>Being more social</li>
+							<li>Learning different subjects</li>
+							<li>Taking more opportunities</li>
+						</ul>
+					</div>
+				</div>
+				<!-------------------------Tiles End----------------------------------->
+			</div>
+		</div>
+		<div class="contact"></div>
+		<br/>
+		<div class="footer">
+			<!--<p>
+				Background image provided by Nou Vang
+			</p>-->
+		</div>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <!--Start of HTML var's-->
         <div style="display:none" id="menuNum">1</div>

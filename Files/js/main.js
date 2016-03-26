@@ -1,30 +1,27 @@
 window.addEventListener("load", function () {
 	slideShow();
-	slideOutMenu();
 });
-function slideOutMenu() {
-    var toggle = document.getElementById("menuToggle"),
-        menu = document.getElementById("menu"),
-        cover = document.getElementById("cover"),
-        menuNum = document.getElementById("menuNum"),
-		dig = 0;
-	toggle.addEventListener("mousedown", slide);
-	cover.addEventListener("mousedown", slide);
-	function slide() {
-		if ( dig == 0 ) {
-  	      toggle.style.display = "none";
-  	      menu.style.left = "0px";
-  	      cover.style.display = "block";
-  	      dig = dig + 1;
-  	  } else if ( dig == 1 ) {
-  	      toggle.style.display = "inline-block";
-  	      menu.style.left = "-300px";
-  	      cover.style.display = "none";
-  	      dig = dig - 1;
-  	  }
-	}
-    
-    
+function slideMenuOut(menu_id) {
+	var m = document.getElementById(menu_id + "Slide"),
+		c = document.getElementById("cover"),
+	    b = document.getElementById(menu_id),
+		bd = document.getElementById("body");
+	b.style.display = "none";
+	m.style.left = "0px";
+	m.style.overflowY = "auto"
+	c.style.display = "block";
+	bd.style.overflowY = "hidden";
+}
+function slideMenuIn() {
+	var b = document.getElementById("menuBtn"),
+		c = document.getElementById("cover"),
+		m = document.getElementById("menuBtnSlide"),
+		bd = document.getElementById("body");;
+	b.style.display = "inline-block";
+	m.style.left = "-350px";
+	m.style.overflowY = "hidden"
+	c.style.display = "none";
+	bd.style.overflowY = "auto";
 }
 function slideShow() {
     var slide1 = document.getElementById("slide1"),
@@ -123,4 +120,12 @@ function slideShow() {
             console.log("Hello")
         } 
     }
+}
+function sliderUp(slide_id) {
+	var s = document.getElementById(slide_id + "d");
+	s.style.top = "-259px";
+}
+function sliderDown(slide_id) {
+	var s = document.getElementById(slide_id + "d");
+	s.style.top = "0px";
 }
