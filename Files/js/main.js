@@ -7,7 +7,7 @@ function slideMenuOut(menu_id) {
 	    b = document.getElementById(menu_id),
 		bd = document.getElementById("body");
 	b.style.display = "none";
-	m.style.left = "0px";
+	m.style.transform = "translate3d(350px, 0px, 0px)";
 	m.style.overflowY = "auto"
 	c.style.display = "block";
 	bd.style.overflowY = "hidden";
@@ -18,7 +18,7 @@ function slideMenuIn() {
 		m = document.getElementById("menuBtnSlide"),
 		bd = document.getElementById("body");;
 	b.style.display = "inline-block";
-	m.style.left = "-350px";
+	m.style.transform = "translate3d(-350px, 0px, 0px)";
 	m.style.overflowY = "hidden"
 	c.style.display = "none";
 	bd.style.overflowY = "auto";
@@ -123,9 +123,9 @@ function slideShow() {
 }
 function sliderUp(slide_id) {
 	var s = document.getElementById(slide_id + "d");
-	s.style.top = "-259px";
+	s.style.transform = "translate3d(0px, -259px, 0px)";
 }
 function sliderDown(slide_id) {
 	var s = document.getElementById(slide_id + "d");
-	s.style.top = "0px";
+	s.style.transform = "translate3d(0px, 0px, 0px)";
 }
