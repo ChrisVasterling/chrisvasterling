@@ -1,5 +1,6 @@
 window.addEventListener("load", function () {
 	slideShow();
+	tiles();
 });
 function slideMenuOut(menu_id) {
 	var m = document.getElementById(menu_id + "Slide"),
@@ -23,12 +24,39 @@ function slideMenuIn() {
 	c.style.display = "none";
 	bd.style.overflowY = "auto";
 }
+function tiles() {
+	var tileHeight = document.getElementById("tile").offsetHeight,
+		tile1 = document.getElementById("slide1d"),
+		tile2 = document.getElementById("slide2d"),
+		tile3 = document.getElementById("slide3d"),
+		tile4 = document.getElementById("slide4d");
+	tile1.style.height = (tileHeight + 2) + "px";
+	tile1.style.top = (tileHeight - 255) + "px";
+	tile2.style.height = (tileHeight + 2) + "px";
+	tile2.style.top = (tileHeight - 255) + "px";
+	tile3.style.height = (tileHeight + 2) + "px";
+	tile3.style.top = (tileHeight - 255) + "px";
+	tile4.style.height = (tileHeight + 2) + "px";
+	tile4.style.top = (tileHeight - 255) + "px";
+}
+function sliderUp(slide_id) {
+    var TH = document.getElementById(slide_id + "d").offsetHeight;
+	var s = document.getElementById(slide_id + "d");
+	s.style.transform = "translate3d(0px,-" + TH + "px, 0px)";
+	console.log(TH);
+}
+function sliderDown(slide_id) {
+	var s = document.getElementById(slide_id + "d");
+	s.style.transform = "translate3d(0px, 0px, 0px)";
+}
+
+// CLEAN UP SLIDESHOW CODE!!!
 function slideShow() {
-    var slide1 = document.getElementById("slide1"),
-        slide2 = document.getElementById("slide2"),
-        slide3 = document.getElementById("slide3"),
-        slide4 = document.getElementById("slide4"),
-        slide5 = document.getElementById("slide5"),
+    var slide1 = document.getElementById("slideShow1"),
+        slide2 = document.getElementById("slideShow2"),
+        slide3 = document.getElementById("slideShow3"),
+        slide4 = document.getElementById("slideShow4"),
+        slide5 = document.getElementById("slideShow5"),
         prev = document.getElementById("prev"),
         next = document.getElementById("next"),
         dig = 0;
@@ -36,8 +64,8 @@ function slideShow() {
     slide3.style.display  = "none";
     slide4.style.display  = "none";
     slide5.style.display  = "none";
-    prev.addEventListener("click", slideShowPrev);
-    next.addEventListener("click", slideShowNext);
+    prev.addEventListener("mousedown", slideShowPrev);
+    next.addEventListener("mousedown", slideShowNext);
     function slideShowNext() {
         if ( dig == 0 ) {
             /*Slide 2*/
@@ -120,12 +148,4 @@ function slideShow() {
             console.log("Hello")
         } 
     }
-}
-function sliderUp(slide_id) {
-	var s = document.getElementById(slide_id + "d");
-	s.style.transform = "translate3d(0px, -259px, 0px)";
-}
-function sliderDown(slide_id) {
-	var s = document.getElementById(slide_id + "d");
-	s.style.transform = "translate3d(0px, 0px, 0px)";
 }

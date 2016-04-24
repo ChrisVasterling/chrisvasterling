@@ -6,7 +6,8 @@ html, body {
     font-family: Lato;
     font-weight: 300;
     height: 100%;
-    overflow-x: hidden;
+	width:100%;
+	//overflow-x: hidden;
 }
 a {
 	text-decoration: none;
@@ -22,9 +23,8 @@ button {
 .top {
     position: relative;
     width:100%;
-    height: auto;
-    min-height:50%;
-    //background-image:url(../img/bk/NV-Zoom.jpg);
+    //height:calc(33px + 6px + 30px);
+	height:50%;
 	background-image:url(../img/bk/how-work.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -60,18 +60,16 @@ button {
 	*/
 }
 .menuToggle > .bar {
-    width:25px;
-    height:2px;
+    width:30px;
+    height:3px;
     display:block;
-    margin: 5px 5px;
+    margin: 6px 6px;
     background-color: white;
 }
 .name {
-    position: absolute;
+	position:absolute;
     top:calc(50% - 10%);
-    left:50%;
-    display:inline;
-    transform: translateX(-50%);
+    left:5%;
     font-size:40px;
     font-weight: 300;
 	font-family: Raleway;
@@ -105,8 +103,7 @@ button {
 }
 .menuSlider {
 	width:100%;
-	height: 10%;
-	min-height: 35px;
+	height: auto;
 	background-color: rgb(225, 225, 225);
 	margin-top:10px;
 	margin-bottom:10px;
@@ -117,6 +114,7 @@ button {
 	border:0px;
 	border-bottom: 5px solid transparent;
 	z-index: 1;
+	padding: 15px 0px 15px 0px;
 }
 .menuSlider:hover {
 	/*
@@ -144,8 +142,7 @@ button {
 .controls {
 	width:70%;
 	height:auto;
-	margin-left:50%;
-	transform: translateX(-50%);
+	margin-left:15%;
 }
 .slideBtn {
 	width:50%;
@@ -158,6 +155,9 @@ button {
 	background-color: rgb(225, 225, 225);
 	transition: background-color 0.2s ease-out, border 0.2s ease-out;
 }
+.slideImg {
+	width:100%;
+}
 .slideBtn:hover {
 	/*
 	border-bottom: 5px solid rgba(0, 0, 100, 1);
@@ -167,16 +167,8 @@ button {
 }
 .slide {
 	width: 70%;
-	height:auto;
-	margin-left:50%;
-	transform: translateX(-50%);
-}
-.slideImg {
-	width:100%;
-}
-.slideDesc {
-	text-align:center;
-	font-size: 19px;
+	margin-left:calc(30% / 2);
+	text-align: center;
 }
 .footer > p {
 	background-color:rgb(225, 225, 225); 
@@ -200,7 +192,7 @@ button {
 }
 .tile {
 	width: 250px;
-	height: 255px;
+	height:255px;
 	display:inline-block;
 	margin:5px;
 	background-color: rgb(225, 225, 225);
@@ -216,17 +208,19 @@ button {
 	margin-left:25%; 
 	display:block; 
 	margin-bottom:10px;
+	border-radius:50%;
 }
 .tileDesc {
 	position: relative;
 	top: 0px;
 	background-color: rgb(195, 195, 195);
-	height: calc(100% + 4px);
+	//height: calc(100% + 4px);
+	height: 253px;
 	z-index: 1;
 	padding-top:2px;
 	transition: transform 0.3s cubic-bezier(.5, 1.2, .5, 1.2);
 }
-.slideUp {
+.slideUp, .slideDown {
 	width:100%;
 	height: 45px;
 	padding: 10px 0px 10px 0px;
@@ -234,6 +228,14 @@ button {
 	transition: background-color 0.2s ease-out, border 0.2s ease-out;
 	position:relative;
 	z-index: 0;
+	cursor:pointer;
+}
+.slideUp {
+	position:relative;
+	bottom:;
+}
+.slideDown {
+	
 }
 .slideUp:hover {
 	/*
@@ -243,39 +245,28 @@ button {
 	cursor:pointer;
 }
 
-
-
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1050px) {
 	.slideshow {
+		width:80%;
+		margin-left:10%;
+	}
+	.slide, .controls {
 		width: 90%;
-		margin-left: 5%;
+		margin-left:5%;
 	}
 }
 @media screen and (max-width: 900px) {
-	.slideshow {
-		width: 100%;
-		margin-left: 0px;
-	}
-	.slide, .controls {
-		width:80%;
-	}
 	.funFact {
 		display:none;
 	}
 }
 @media screen and (max-width: 675px) {
-	.slideshow {
-		width: 100%;
-		margin-left: 0px;
-	}
 	.slide, .controls {
-		width:90%;
+		width:100%;
+		margin-left: 0px
 	}
 }
 @media screen and (max-width: 550px) {
-	.slide, .controls {
-		width: 90%;
-	}
 	.tile {
 		width:90%;
 	}
@@ -286,9 +277,5 @@ button {
 		width: 125px;
 		margin-left:0px;
 		display:inline-block;
-	}
-	.top {
-		width: 100%;
-		min-height: 275px;
 	}
 }
