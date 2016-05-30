@@ -47,19 +47,29 @@
         <div class="cover" onmousedown="slideMenuInCover()" id="cover"></div>
 		<hr style="width:60%; margin-top:25px; margin-bottom:25px;"></hr>
 		<div class="websites" id="websitesSec">
-			<!--Websites - Slideshow - Material-->
 			<div class="gallery" id="gallery">
-				<div class="controls">
-					<button onmousedown="bottomSlide(this.id)" onclick="gallery(this.id)" id="image1">Image 1</button>
-					<hr style="width:0%; margin-top:-10px;" id="image1Hr"></hr>
+				<div class="controls" id="controls">
+					<img src="Files/img/icons/arrowLeft.png" class="controlTog" id="controlTog" onmousedown="galleryControls()"/>
+					<button onclick="gallery(this.id)" onmousedown="bottomSlide(this.id)" id="image1">Website 1</button>
+					<hr style="width:0%; margin-top:-10px; position:relative; top:-40px;" id="image1Hr"></hr>
 					
-					<button onmousedown="bottomSlide(this.id)" onclick="gallery(this.id)" id="image2">Image 2</button>
-					<hr style="width:0%; margin-top:-10px;" id="image2Hr"></hr>
+					<button onclick="gallery(this.id)" onmousedown="bottomSlide(this.id)" id="image2">Website 2</button>
+					<hr style="width:0%; margin-top:-10px; position:relative; top:-40px;" id="image2Hr"></hr>
+				</div>
+				<div style=" background-color:rgb(225, 225, 225); width:100%; height:20px; text-align:center; padding: 2px 0px 2px 0px; margin-top:-24px;">
+					<a href="http://delongyearbooks.weebly.com" target="_blank" id="imageLink" >View Website</a>
 				</div>
 			</div>
 		</div>
+		<br/>
 		<div class="projects" id="projectsSec">
-			Projects
+			<div class="projectTiles">
+				projectTiles
+			</div>
+			<hr style="width:30%; margin-top:10px 0px 10px 0px;"></hr>
+			<div class="goalTiles">
+				goalTiles
+			</div>
 		</div>
 		<div class="contact" id="contactSec">
 			Contact

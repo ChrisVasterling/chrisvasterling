@@ -51,9 +51,33 @@ function bottomSlide(btn) {
 }
 function gallery(image_id) {
 	var img_id = document.getElementById(image_id).id,
-		img_btn = document.getElementById(image_id),
-		gal = document.getElementById("gallery");
-	gal.style.backgroundImage = "url(Files/img/gallery/" + img_id + ".png)";
-	//img_btn.style.backgroundColor = "rgb(45, 45, 45)";
-	//img_btn.style.color = "white";
+		gal = document.getElementById("gallery"),
+		imgLink = document.getElementById("imageLink"),
+		image1Link = "http://delongyearbooks.weebly.com",
+		image2Link = "http://longfellowyearbooks.weebly.com";
+	setTimeout(function() {
+		gal.style.backgroundImage = "url(Files/img/gallery/" + img_id + ".png)";
+		if ( img_id == "image1") {
+			imgLink.href = image1Link;
+		} else if ( img_id == "image2" ) {
+			imgLink.href = image2Link;
+		}; // Add more else if's if there are more images
+	}, 200)
+	
+}
+var pos = "0";
+function galleryControls() {
+	var controls = document.getElementById("controls"),
+		controlTog = document.getElementById("controlTog"),
+		ctrlWidth = controls.offsetWidth;
+	if (pos == "0") {
+		controls.style.transform = "translate3d(-" + ctrlWidth + "px, 0px, 0px)";	
+		controlTog.style.transform = "rotate(180deg)";
+		pos = "1";
+	} else if (pos == "1") {
+		controls.style.transform = "translate3d(0px, 0px, 0px)";
+		controlTog.style.transform = "rotate(0deg)";
+		pos = "0";
+	}
+	
 }
