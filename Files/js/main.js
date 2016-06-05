@@ -81,3 +81,29 @@ function galleryControls() {
 	}
 	
 }
+// default Y position for the slide container
+var psY = 0;
+// take the number of slides and multiply it by 100
+var maxPsY = 400;
+function projectsUp() {
+	var ps = document.getElementById("projectSlides");
+	// seen as psY = psY + 100
+	psY += 100;
+	// if psY equals maxPsY then subtract 100 and set it equal to 0
+	if ( psY == maxPsY ) {
+		psY -= maxPsY;
+	}
+	//console.log(psY)
+	ps.style.transform = "translate3d(0px, -" + psY + "%, 0px)";
+}
+function projectsDown() {
+	var ps = document.getElementById("projectSlides");
+	// seen as psY = psY - 100
+	psY -= 100;
+	// if psY equals -100 then add maxPsY and set it equal to (maxPsY - 100)
+	if ( psY == -100 ) {
+		psY += maxPsY;
+	}
+	//console.log(psY)
+	ps.style.transform = "translate3d(0px, -" + psY + "%, 0px)";
+}

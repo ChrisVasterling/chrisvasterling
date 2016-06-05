@@ -52,7 +52,6 @@
 					<img src="Files/img/icons/arrowLeft.png" class="controlTog" id="controlTog" onmousedown="galleryControls()"/>
 					<button onclick="gallery(this.id)" onmousedown="bottomSlide(this.id)" id="image1">Website 1</button>
 					<hr style="width:0%; margin-top:-10px; position:relative; top:-40px;" id="image1Hr"></hr>
-					
 					<button onclick="gallery(this.id)" onmousedown="bottomSlide(this.id)" id="image2">Website 2</button>
 					<hr style="width:0%; margin-top:-10px; position:relative; top:-40px;" id="image2Hr"></hr>
 				</div>
@@ -63,13 +62,38 @@
 		</div>
 		<br/>
 		<div class="projects" id="projectsSec">
-			<div class="projectTiles">
-				projectTiles
-			</div>
-			<hr style="width:30%; margin-top:10px 0px 10px 0px;"></hr>
-			<div class="goalTiles">
-				goalTiles
-			</div>
+			<div class="projectControls">
+					<button onmousedown="projectsUp()">
+						<img src="Files/img/icons/arrowUp.png"/>
+					</button>
+					<button onmousedown="projectsDown()">
+						<img src="Files/img/icons/arrowDown.png"/>
+					</button>
+				</div>
+			<div style="width:65%; height: 250px; margin-left:calc(35% / 2); background-color:rgb(225, 225, 225); ">
+				<div class="slideContainer">
+					<div class="projectSlides" id="projectSlides">
+						<div class="projectSlide">
+							<img src="Files/img/logo.png" class="projectImg"/>
+							<div class="projectDesc"/>
+								This Website
+								<hr/>
+								<p style="margin:0px; padding:0px; font-size:15px; word-wrap: break-word;">
+									This section isn't complete yet. (May not work on mobile)
+								</p>
+							</div>
+						</div>
+						<div class="projectSlide">
+							2
+						</div>
+						<div class="projectSlide">
+							3
+						</div>
+						<div class="projectSlide">
+							4
+						</div>
+					</div>
+				</div>
 		</div>
 		<div class="contact" id="contactSec">
 			Contact
