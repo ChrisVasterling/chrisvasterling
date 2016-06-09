@@ -9,7 +9,7 @@ function slideMenuIn(btn) {
 		btnId = document.getElementById(btn + "Hr"),
 		sec = document.getElementById(btn + "Sec").offsetTop;
 	setTimeout( function() {
-		window.scrollTo(0, sec - 25);
+		window.scrollTo(0, sec - 50);
 		b.style.display = "inline-block";
 		m.style.transform = "translate3d(-300px, 0px, 0px)";
 		m.style.overflowY = "hidden"

@@ -34,6 +34,10 @@
 				Projects and Goals
 			</button>
 			<hr style="width:0%; margin-top:-10px;" id="projectsHr"></hr>
+			<button class="menuSlider" onclick="slideMenuIn(this.id), bottomSlide(this.id)" id="about">
+				About Me
+			</button>
+			<hr style="width:0%; margin-top:-10px;" id="aboutHr"></hr>
 			<button class="menuSlider" onclick="slideMenuIn(this.id), bottomSlide(this.id)" style="margin-top:25px;" id="contact">
 				Contact Information
 			</button>
@@ -60,40 +64,74 @@
 				</div>
 			</div>
 		</div>
-		<br/>
+		<hr style="width:30%; margin-top:25px; margin-bottom:25px;"></hr>
 		<div class="projects" id="projectsSec">
 			<div class="projectControls">
-					<button onmousedown="projectsUp()">
-						<img src="Files/img/icons/arrowUp.png"/>
-					</button>
-					<button onmousedown="projectsDown()">
-						<img src="Files/img/icons/arrowDown.png"/>
-					</button>
-				</div>
-			<div style="width:65%; height: 250px; margin-left:calc(35% / 2); background-color:rgb(225, 225, 225); ">
-				<div class="slideContainer">
-					<div class="projectSlides" id="projectSlides">
+				<button onmousedown="projectsDown()">
+					<img src="Files/img/icons/arrowDown.png"/>
+				</button>
+				<button onmousedown="projectsUp()">
+					<img src="Files/img/icons/arrowUp.png"/>
+				</button>
+			</div>
+			<div class="slideContainer">
+				<div class="projectSlides" id="projectSlides">
+					<div class="projectSlide">
+						<img src="Files/img/icons/school.png" class="projectImg"/>
+						<div class="projectDesc"/>
+							College and Beyond
+							<hr/>
+							<p style="margin:0px; padding:0px; font-size:15px; word-wrap: break-word;">
+								I plan on going to college and doing something with Computer Science/Information Technology.
+								After that I would like to have a job that does programming.
+								<!--Goals for colleges and life afterwards-->
+							</p>
+						</div>
+					</div>
+					<div class="projectSlide">
+						<img src="Files/img/icons/code.png" class="projectImg"/>
+						<div class="projectDesc"/>
+							Programming Languages
+							<hr/>
+							<p style="margin:0px; padding:0px; font-size:15px; word-wrap: break-word;">
+								I am currently taking a Python course on 
+								<a href="https://www.codecademy.com/Vastermaster" target="_blank">Codecademy</a>
+								and I plan on also taking the Java course aswell.
+								<!--Set a goal for learning different programming languages-->
+							</p>
+						</div>
+					</div>
+					<div class="projectSlide">
+						<img src="Files/img/logo.png" class="projectImg"/>
+						<div class="projectDesc"/>
+							This Website
+							<hr/>
+							<p style="margin:0px; padding:0px; font-size:15px; word-wrap: break-word;">
+								This website will be updated whenever things change. EX: Going to a different school,
+								learning a new skill, making more/complex websites, etc.
+								<!--Future plans for this website-->
+							</p>
+						</div>
+					</div>
+					<div class="projectSlide">
 						<div class="projectSlide">
-							<img src="Files/img/logo.png" class="projectImg"/>
+							<img src="Files/img/icons/html.png" class="projectImg"/>
 							<div class="projectDesc"/>
-								This Website
-								<hr/>
-								<p style="margin:0px; padding:0px; font-size:15px; word-wrap: break-word;">
-									This section isn't complete yet. (May not work on mobile)
-								</p>
-							</div>
-						</div>
-						<div class="projectSlide">
-							2
-						</div>
-						<div class="projectSlide">
-							3
-						</div>
-						<div class="projectSlide">
-							4
+							Name of current Project
+							<hr/>
+							<p style="margin:0px; padding:0px; font-size:15px; word-wrap: break-word;">
+								Whatever website I am currently working will go here so you can see what is going on
+								and how it looks as I go.
+								<!--Future plans for this website-->
+							</p>
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+		<hr style="width:25%; margin-top:25px; margin-bottom:25px;"></hr>
+		<div class="about" id="aboutSec">
+			About
 		</div>
 		<div class="contact" id="contactSec">
 			Contact
