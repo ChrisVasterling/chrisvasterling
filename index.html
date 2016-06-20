@@ -53,10 +53,12 @@
 		<div class="websites" id="websitesSec">
 			<div class="gallery" id="gallery">
 				<div class="controls" id="controls">
-					<img src="Files/img/icons/arrowLeft.png" class="controlTog" id="controlTog" onmousedown="galleryControls()"/>
-					<button onclick="gallery(this.id)" onmousedown="bottomSlide(this.id)" id="image1">Website 1</button>
+                    <button class="controlTog" id="controlTog" onmousedown="galleryControls()">
+                        <img src="Files/img/icons/arrowLeft.png" style="height:100%;"/>
+                    </button>
+					<button onclick="gallery(this.id)" onmousedown="bottomSlide(this.id)" id="image1" class="controlButton">Website 1</button>
 					<hr style="width:0%; margin-top:-10px; position:relative; top:-40px;" id="image1Hr"></hr>
-					<button onclick="gallery(this.id)" onmousedown="bottomSlide(this.id)" id="image2">Website 2</button>
+					<button onclick="gallery(this.id)" onmousedown="bottomSlide(this.id)" id="image2" class="controlButton">Website 2</button>
 					<hr style="width:0%; margin-top:-10px; position:relative; top:-40px;" id="image2Hr"></hr>
 				</div>
 				<div style=" background-color:rgb(225, 225, 225); width:100%; height:20px; text-align:center; padding: 2px 0px 2px 0px; margin-top:-24px;">
@@ -131,8 +133,18 @@
 		</div>
 		<hr style="width:25%; margin-top:25px; margin-bottom:25px;"></hr>
 		<div class="about" id="aboutSec">
-			About
+			<div class="aboutTop">
+				<img src="Files/img/icons/personal.png" style="width:100px;"/>
+				<hr style="width:10%; margin-top:10px; margin-bottom:10px;"></hr>
+				About Me
+				<hr style="width:90%; margin-top:10px; margin-bottom:10px;"></hr>
+			</div>
+			NOT DONE
+			<button style="width:10%; padding:5px; border:0px; background-color:rgb(175,225,100); margin-left:calc(50% - 5%); display:block;">
+				<img src="Files/img/icons/arrowDown.png" style="width:100%;"/>
+			</button>
 		</div>
+		<hr style="width:20%; margin-top:25px; margin-bottom:25px;"></hr>
 		<div class="contact" id="contactSec">
 			Contact
 		</div>
@@ -142,8 +154,5 @@
 		</div>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <!--Start of HTML var's-->
-        
-        <!--End of HTML var's-->
     </body>
 </html>
