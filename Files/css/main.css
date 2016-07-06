@@ -138,7 +138,7 @@ hr {
 	overflow-y: hidden;
 }
 .gallery > .controls {
-	height:100%;
+	height:calc(100% - 24px);
 	background-color:rgba(145, 145, 145, 0.7);
 	width:auto;
 	display:inline-block;
@@ -220,18 +220,29 @@ hr {
 	float:none;
 }
 .about {
-	width:50%;
-	margin-left:calc(50% / 2);
-	height:auto;
-	background-color:rgb(225, 225, 225);
+	width:100%;
+}
+.aboutTop, .aboutContainer {
+    width: 75%;
+    margin-left: calc(25% / 2);
 }
 .aboutTop {
-	width: 100%; 
 	height:auto; 
 	text-align:center; 
 	background-color: rgb(205, 205, 205); 
 	font-size:25px; 
-	padding: 10px 0px 10px 0px
+	padding: 10px 0px 10px 0px;
+}
+.aboutContainer {
+    overflow:hidden;
+    height: 300px;
+    background-color: red;
+}
+.aboutSlide {
+    float: left;
+    height:100%;
+    width:100%;
+    background-color: blue;
 }
 .footer {
 	background-color:rgb(225, 225, 225); 
@@ -281,8 +292,14 @@ hr {
 		height: 100px;
 		margin-bottom:10px;
 	}
+}
 @media screen and (max-width: 650px) {
 	.gallery {
 		height:250px;
 	}
+}
+@media screen and (max-width: 385px) {
+    .projectImg {
+        display:none;
+    }
 }
