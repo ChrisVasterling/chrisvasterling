@@ -12,10 +12,10 @@ function slideMenuIn(btn) {
 		window.scrollTo(0, sec - 50);
 		b.style.display = "inline-block";
 		m.style.transform = "translate3d(-300px, 0px, 0px)";
-		m.style.overflowY = "hidden"
+		m.style.overflowY = "hidden";
 		c.style.display = "none";
 		bd.style.overflowY = "auto";
-	}, 350)
+	}, 350);
 }
 function slideMenuInCover() {
 	var b = document.getElementById("menuBtn"),
@@ -35,7 +35,7 @@ function slideMenuOut(menu_id) {
 		bd = document.getElementById("body");
 	b.style.display = "none";
 	m.style.transform = "translate3d(300px, 0px, 0px)";
-	m.style.overflowY = "auto"
+	m.style.overflowY = "auto";
 	c.style.display = "block";
 	bd.style.overflowY = "hidden";
 }

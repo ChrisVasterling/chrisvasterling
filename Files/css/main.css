@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,300);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300);
 html, body {
 	margin:0px;
 	padding:0px;
@@ -26,6 +27,9 @@ hr {
 	border-top:3px solid rgb(0, 0, 100);
 	transition: width 300ms ease-out, opacity 200ms ease-out;
 	transform: translate3d(0px, 0px, 0);
+}
+img {
+    transform: scale3d(1,1,1);
 }
 ::selection {
 	background-color:rgb(0, 0, 100);
