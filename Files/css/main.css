@@ -58,14 +58,14 @@ img {
 	display:none;
 }
 .menuToggle {
-    position:relative;
+    position:fixed;
     top:15px;
     left:15px;
     display:inline-block;
-    padding:3px;
-    /*background-color:rgba(0,0,100, 0.7);*/
+    padding:8px 5px 8px 5px;
+    background-color:rgba(0,0,100, 1.0);
     cursor:pointer;
-    border-radius: 5px;
+    border-radius: 50%;
     transition: background-color 0.2s ease;
 }
 .menuToggle > .bar {
@@ -93,7 +93,7 @@ img {
     width:300px;
     max-width:70%;
     height:100%;
-    position: absolute;
+    position: fixed;
     top:0px;
     left:-300px;
     background-color: rgb(245, 245, 245);
@@ -104,7 +104,7 @@ img {
 .cover {
     display:none;
     background-color: rgba(20, 20, 20, 0.5);
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     height:100%;
