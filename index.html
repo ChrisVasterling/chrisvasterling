@@ -34,7 +34,8 @@
 				Projects and Goals
 			</button>
 			<hr style="width:0%; margin-top:-10px;" id="projectsHr"></hr>
-			<button class="menuSlider" onclick="slideMenuIn(this.id), bottomSlide(this.id)" id="about">
+			
+            <button class="menuSlider" onclick="slideMenuIn(this.id), bottomSlide(this.id)" id="about">
 				About Me
 			</button>
 			<hr style="width:0%; margin-top:-10px;" id="aboutHr"></hr>
@@ -68,15 +69,16 @@
 		</div>
 		<hr style="width:30%; margin-top:25px; margin-bottom:25px;"></hr>
 		<div class="projects" id="projectsSec">
-			<div class="projectControls">
+            <div class="slideAll">
+                <div class="projectControls">
 				<button onmousedown="projectsDown()">
 					<img src="Files/img/icons/svg/arrowDown.svg"/>
 				</button>
-				<button onmousedown="projectsUp()">
+                <button onmousedown="projectsUp()">
 					<img src="Files/img/icons/svg/arrowUp.svg"/>
 				</button>
 			</div>
-			<div class="slideContainer">
+                <div class="slideContainer">
 				<div class="projectSlides" id="projectSlides">
 					<div class="projectSlide">
 						<img src="Files/img/icons/svg/school.svg" class="projectImg"/>
@@ -119,18 +121,20 @@
 					</div>
 					<div class="projectSlide">
 				        <img src="Files/img/icons/svg/html.svg" class="projectImg"/>
-				        <div class="projectDesc"/>
-						North High Yearbooks - 
-                        <a href='http://northyearbooks.weebly.com' target="_blank">View Website</a>
-						<hr/>
-						<p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
-				            This website is going to be an online version of all my high school yearbooks.
-								<!--Future plans for this website-->
-				        </p>
-					</div>
-				</div>
-			</div>
-		</div>
+				        <div class="projectDesc">
+				            North High Yearbooks - 
+                            <a href='http://northyearbooks.weebly.com' target="_blank">View Website</a>
+				            <hr/>
+				            <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
+                            This website is going to be an online version of all my high school yearbooks.
+				            <!--Future plans for this website-->
+				            </p>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+            </div>
+        </div>
 		<hr style="width:25%; margin-top:25px; margin-bottom:25px;"></hr>
 		<div class="about" id="aboutSec">
 			<div class="aboutTop">
