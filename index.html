@@ -53,86 +53,84 @@
 		<hr style="width:60%; margin-top:25px; margin-bottom:25px;"></hr>
 		<div class="websites" id="websitesSec">
 			<div class="gallery" id="gallery">
-				<div class="controls" id="controls">
-                    <button class="controlTog" id="controlTog" onmousedown="galleryControls()">
-                        <img src="Files/img/icons/svg/arrowLeft.svg" style="height:100%;"/>
-                    </button>
-					<button onclick="gallery(this.id)" onmousedown="bottomSlide(this.id)" id="image1" class="controlButton">Website 1</button>
-					<hr style="width:0%; margin-top:-10px; position:relative; top:-40px;" id="image1Hr"></hr>
-					<button onclick="gallery(this.id)" onmousedown="bottomSlide(this.id)" id="image2" class="controlButton">Website 2</button>
-					<hr style="width:0%; margin-top:-10px; position:relative; top:-40px;" id="image2Hr"></hr>
-				</div>
-				<div style=" background-color:rgb(225, 225, 225); width:100%; height:20px; text-align:center; padding: 2px 0px 2px 0px;">
-					<a href="http://delongyearbooks.weebly.com" target="_blank" id="imageLink" >View Website</a>
-				</div>
-			</div>
+                <div class="galleryControls" id='galleryControls'>
+                    ***DEVELOPING*** 
+                    <br/><br/>
+                    WESITE THUMBNAILS 
+                    <br/><br/>  
+                    ***DEVELOPING***
+                </div>
+                <button onmousedown="gallerySites()" id='galleryTog'>
+                    <img src="Files/img/icons/arrowDown.png" id='galleryTogImg'/>
+                </button>
+                <img src='Files/img/gallery/image1.png' class='galleryImg' id='galleryImg'>
+            </div>
 		</div>
 		<hr style="width:30%; margin-top:25px; margin-bottom:25px;"></hr>
 		<div class="projects" id="projectsSec">
             <div class="slideAll">
                 <div class="projectControls">
-				<button onmousedown="projectsDown()">
-					<img src="Files/img/icons/svg/arrowDown.svg"/>
-				</button>
-                <button onmousedown="projectsUp()">
-					<img src="Files/img/icons/svg/arrowUp.svg"/>
-				</button>
-			</div>
+                    <button onmousedown="projectsDown()">
+					   <img src="Files/img/icons/svg/arrowUp.svg"/>
+				    </button>
+				    <button onmousedown="projectsUp()">
+					   <img src="Files/img/icons/svg/arrowDown.svg"/>
+				    </button>
+                </div>
                 <div class="slideContainer">
-				<div class="projectSlides" id="projectSlides">
-					<div class="projectSlide">
-						<img src="Files/img/icons/svg/school.svg" class="projectImg"/>
-						<div class="projectDesc">
-							College and Beyond
-							<hr/>
-							<p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
-								I plan on going to college and doing something with Computer Science/Information Technology.
-								After that I would like to have a job that does programming.
-								<!--Goals for colleges and life afterwards-->
-							</p>
-						</div>
-					</div>
-					<div class="projectSlide">
-						<img src="Files/img/icons/svg/code.svg" class="projectImg"/>
-						<div class="projectDesc">
-							Programming Languages
-							<hr/>
-							<p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
-								I have finished the python course on
-								<a href="https://www.codecademy.com/Vastermaster" target="_blank">Codecademy</a>.
-                                Currently I am creating a few different programs. One of which is
-                                a text-based world game.
-								
-								<!--Set a goal for learning different programming languages-->
-							</p>
-						</div>
+				    <div class="projectSlides" id="projectSlides">
+					   <div class="projectSlide">
+                           <img src="Files/img/icons/svg/school.svg" class="projectImg"/>
+                           <div class="projectDesc">
+                               College and Beyond
+                               <hr/>
+                               <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
+                                   I plan on going to college and doing something with Computer Science/Information Technology.
+                                   After that I would like to have a job that does programming.
+                                   <!--Goals for colleges and life afterwards-->
+                               </p>
+                           </div>
+					   </div>
+					   <div class="projectSlide">
+                           <img src="Files/img/icons/svg/code.svg" class="projectImg"/>
+                           <div class="projectDesc">
+                               Programming Languages
+                               <hr/>
+                               <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
+                                   I have finished the python course on
+                                   <a href="https://www.codecademy.com/Vastermaster" target="_blank">Codecademy</a>.
+                                   Currently I am working on a text-based sandbox game.
+                                   <!--Set a goal for learning different programming languages-->
+                               </p>
+                           </div>
+                       </div>
+					   <div class="projectSlide">
+                           <img src="Files/img/icons/svg/logo.svg" class="projectImg"/>
+                           <div class="projectDesc">
+                               This Website
+                               <hr/>
+                               <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
+                                   This website will be updated whenever things change. EX: Going to a different school,
+                                   learning a new skill, making more/complex websites, etc.
+                                   <!--Future plans for this website-->
+                               </p>
+                           </div>
+                       </div>
+					   <div class="projectSlide">
+                           <img src="Files/img/icons/svg/html.svg" class="projectImg"/>
+                           <div class="projectDesc">
+                               2016 North High Yearbook - 
+                               <a href='https://chrisvasterling.github.io/2016Northyearbook/' target="_blank">View Website</a>
+                               <hr/>
+                               <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
+                                   This website is going to be an online version of the 2016 North High yearbook. It will contain
+                                   almost every single page from the yearbook in a structure similar to the yearbook itself.
+                                   <!--Future plans for this website-->
+                               </p>
+                           </div>
+                        </div>
                     </div>
-					<div class="projectSlide">
-						<img src="Files/img/icons/svg/logo.svg" class="projectImg"/>
-						<div class="projectDesc">
-							This Website
-							<hr/>
-							<p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
-								This website will be updated whenever things change. EX: Going to a different school,
-								learning a new skill, making more/complex websites, etc.
-								<!--Future plans for this website-->
-							</p>
-						</div>
-					</div>
-					<div class="projectSlide">
-				        <img src="Files/img/icons/svg/html.svg" class="projectImg"/>
-				        <div class="projectDesc">
-				            North High Yearbooks - 
-                            <a href='http://northyearbooks.weebly.com' target="_blank">View Website</a>
-				            <hr/>
-				            <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
-                            This website is going to be an online version of all my high school yearbooks.
-				            <!--Future plans for this website-->
-				            </p>
-					    </div>
-				    </div>
-			    </div>
-		    </div>
+                </div>
             </div>
         </div>
 		<hr style="width:25%; margin-top:25px; margin-bottom:25px;"></hr>

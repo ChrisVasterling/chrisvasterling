@@ -49,6 +49,29 @@ function bottomSlide(btn) {
 		btnId.style.opacity = "0.0";
 	}, 400)
 }
+var viewSites = '0'
+function gallerySites() {
+    var img = document.getElementById('galleryImg'),
+        tog = document.getElementById('galleryTog'),
+        togImg = document.getElementById('galleryTogImg'),
+        cont = document.getElementById('galleryControls');
+    cont.style.height = img.clientHeight + 'px'
+    if (viewSites == '0') {
+        cont.style.transform = 'translate3d(0px, ' + tog.clientHeight + 'px, 0px)'
+        togImg.style.transform = 'rotateX(180deg)'  
+        viewSites = '1'
+    } else if (viewSites == '1') {
+        cont.style.transform = 'translate3d(0px, -100%, 0px)'
+        togImg.style.transform = 'rotateX(0deg)'
+        viewSites = '0'
+    }
+}
+
+
+
+
+
+
 function gallery(image_id) {
 	var img_id = document.getElementById(image_id).id,
 		gal = document.getElementById("gallery"),
@@ -65,45 +88,38 @@ function gallery(image_id) {
 	}, 200)
 	
 }
-var pos = "0";
-function galleryControls() {
-	var controls = document.getElementById("controls"),
-		controlTog = document.getElementById("controlTog"),
-		ctrlWidth = controls.offsetWidth;
-	if (pos == "0") {
-		controls.style.transform = "translate3d(-" + ctrlWidth + "px, 0px, 0px)";	
-		controlTog.style.transform = "rotate(180deg)";
-		pos = "1";
-	} else if (pos == "1") {
-		controls.style.transform = "translate3d(0px, 0px, 0px)";
-		controlTog.style.transform = "rotate(0deg)";
-		pos = "0";
-	}
-	
-}
+
+/*
+    Project Section - Slides
+*/
 // default Y position for the slide container
-var psY = 0;
-// take the number of slides and multiply it by 100
-var maxPsY = 400;
+var Yval = 0;
+// counts number of slides on load, since each slide is 100% multiple the number of slides
+// by 100 so you get all the percentages added together.
+window.onload = function () {
+    var slideAmount = document.getElementsByClassName("projectSlide").length;
+    // take the number of slides and multiply it by 100 (for percentage height total)
+    maxYval = slideAmount * 100;
+}
 function projectsUp() {
 	var ps = document.getElementById("projectSlides");
-	// seen as psY = psY + 100
-	psY += 100;
-	// if psY equals maxPsY then subtract 100 and set it equal to 0
-	if ( psY == maxPsY ) {
-		psY -= maxPsY;
+	// seen as Yval = Yval + 100
+	Yval += 100;
+	// if Yval equals maxYval then subtract 100 and set it equal to 0
+	if ( Yval == maxYval ) {
+		Yval -= maxYval;
 	}
-	//console.log(psY)
-	ps.style.transform = "translate3d(0px, -" + psY + "%, 0px)";
+	//console.log(Yval)
+	ps.style.transform = "translate3d(0px, -" + Yval + "%, 0px)";
 }
 function projectsDown() {
 	var ps = document.getElementById("projectSlides");
-	// seen as psY = psY - 100
-	psY -= 100;
-	// if psY equals -100 then add maxPsY and set it equal to (maxPsY - 100)
-	if ( psY == -100 ) {
-		psY += maxPsY;
+	// seen as Yval = Yval - 100
+	Yval -= 100;
+	// if Yval equals -100 then add maxYval and set it equal to (maxYval - 100)
+	if ( Yval == -100 ) {
+		Yval += maxYval;
 	}
-	//console.log(psY)
-	ps.style.transform = "translate3d(0px, -" + psY + "%, 0px)";
+	//console.log(Yval)
+	ps.style.transform = "translate3d(0px, -" + Yval + "%, 0px)";
 }
