@@ -57,7 +57,7 @@ function gallerySites() {
         cont = document.getElementById('galleryControls');
     cont.style.height = img.clientHeight + 'px'
     if (viewSites == '0') {
-        cont.style.transform = 'translate3d(0px, ' + tog.clientHeight + 'px, 0px)'
+        cont.style.transform = 'translate3d(0px, ' + tog.offsetHeight + 'px, 0px)'
         togImg.style.transform = 'rotateX(180deg)'  
         viewSites = '1'
     } else if (viewSites == '1') {
