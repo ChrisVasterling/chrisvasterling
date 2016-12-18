@@ -142,10 +142,11 @@ img {
 .gallery {
 	width:55%;
 	margin-left:calc(45% / 2);
-	background-color:black;
+	background-color:rgb(80,100,145);
 	overflow-y: hidden;
     position: relative;
     box-shadow: -5px 5px 15px black;
+    text-align: center;
 }
 .galleryImg {
     width: 100%;
@@ -163,6 +164,19 @@ img {
     background-color: rgba(225, 225, 225, 0.7);
     text-align: center;
     color: red;
+    overflow: auto;
+}
+.galleryControls > button, .galleryLink {
+    border: 0px;
+    padding: 10px;
+    margin: 10px;
+    font-family: Ubuntu;
+    font-weight: 400;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 100, .8);
+    color: white;
+    border-bottom: 3px solid rgba(85,40,10, 1);
 }
 .gallery > button {
     z-index: 2;
@@ -184,16 +198,14 @@ img {
     transform: rotateX(0deg);
     transition: transform 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
 }
-.controlTog {
-	height:45px; 
-	position:relative; 
-	top:10px; 
-	left:100%; 
-	display:block; 
-	cursor:pointer;
-	background-color:rgb(80,100,145);
-	padding:5px 5px 5px 5px;
-    border:0px;
+.galleryLinks {
+    margin: 10px; 
+    color: white;
+}
+.galleryLink {
+    margin: 5px;
+    font-family: Lato;
+    font-weight: 300;
 }
 .projects {
 	width: 100%;

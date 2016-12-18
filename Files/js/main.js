@@ -1,5 +1,12 @@
 window.addEventListener("load", function () {
-	
+    /*
+        Project Section - Slides
+    */
+    // counts number of slides on load, since each slide is 100% multiple the number of slides
+    // by 100 so you get all the percentages added together.
+	var slideAmount = document.getElementsByClassName("projectSlide").length;
+    // take the number of slides and multiply it by 100 (for percentage height total)
+    maxYval = slideAmount * 100;
 });
 function slideMenuIn(btn) {
 	var b = document.getElementById("menuBtn"),
@@ -51,7 +58,7 @@ function bottomSlide(btn) {
 }
 var viewSites = '0'
 function gallerySites() {
-    var img = document.getElementById('galleryImg'),
+    var img = document.getElementById('gallery'),
         tog = document.getElementById('galleryTog'),
         togImg = document.getElementById('galleryTogImg'),
         cont = document.getElementById('galleryControls');
@@ -66,41 +73,8 @@ function gallerySites() {
         viewSites = '0'
     }
 }
-
-
-
-
-
-
-function gallery(image_id) {
-	var img_id = document.getElementById(image_id).id,
-		gal = document.getElementById("gallery"),
-		imgLink = document.getElementById("imageLink"),
-		image1Link = "http://delongyearbooks.weebly.com",
-		image2Link = "http://longfellowyearbooks.weebly.com";
-	setTimeout(function() {
-		gal.style.backgroundImage = "url(Files/img/gallery/" + img_id + ".png)";
-		if ( img_id == "image1") {
-			imgLink.href = image1Link;
-		} else if ( img_id == "image2" ) {
-			imgLink.href = image2Link;
-		}; // Add more else if's if there are more images
-	}, 200)
-	
-}
-
-/*
-    Project Section - Slides
-*/
 // default Y position for the slide container
 var Yval = 0;
-// counts number of slides on load, since each slide is 100% multiple the number of slides
-// by 100 so you get all the percentages added together.
-window.onload = function () {
-    var slideAmount = document.getElementsByClassName("projectSlide").length;
-    // take the number of slides and multiply it by 100 (for percentage height total)
-    maxYval = slideAmount * 100;
-}
 function projectsUp() {
 	var ps = document.getElementById("projectSlides");
 	// seen as Yval = Yval + 100
@@ -123,3 +97,34 @@ function projectsDown() {
 	//console.log(Yval)
 	ps.style.transform = "translate3d(0px, -" + Yval + "%, 0px)";
 }
+function galleryImage(website) {
+    var image = "Files/img/gallery/" + document.getElementById(website).dataset.image,
+        website = document.getElementById(website).dataset.url,
+        galleryWebsite = document.getElementById('galleryWebsite'),
+        galleryImage = document.getElementById('galleryImage')
+        gallery = document.getElementById('galleryImg');
+    gallery.src = image;
+    galleryWebsite.href = website;
+    galleryImage.href = gallery.src
+}
+
+
+
+
+function gallery(image_id) {
+	var img_id = document.getElementById(image_id).id,
+		gal = document.getElementById("gallery"),
+		imgLink = document.getElementById("imageLink"),
+		image1Link = "http://delongyearbooks.weebly.com",
+		image2Link = "http://longfellowyearbooks.weebly.com";
+	setTimeout(function() {
+		gal.style.backgroundImage = "url(Files/img/gallery/" + img_id + ".png)";
+		if ( img_id == "image1") {
+			imgLink.href = image1Link;
+		} else if ( img_id == "image2" ) {
+			imgLink.href = image2Link;
+		}; // Add more else if's if there are more images
+	}, 200)
+	
+}
+

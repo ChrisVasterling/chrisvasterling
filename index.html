@@ -58,16 +58,35 @@
 		<div class="websites" id="websitesSec">
 			<div class="gallery" id="gallery">
                 <div class="galleryControls" id='galleryControls'>
-                    ***DEVELOPING*** 
-                    <br/><br/>
-                    WESITE THUMBNAILS 
-                    <br/><br/>  
-                    ***DEVELOPING***
+                    <button 
+                            data-image="DeLong.png" 
+                            data-url="http://delongyearbooks.weebly.com" 
+                            id="galleryDeLong" onmousedown="galleryImage(this.id), gallerySites()">
+                        DeLong Yearbooks
+                    </button>
+                    <button 
+                            data-image="Longfellow.png" 
+                            data-url="http://longfellowyearbooks.weebly.com" 
+                            id="galleryLongfellow" onmousedown="galleryImage(this.id), gallerySites()">
+                        Longfellow Yearbooks
+                    </button>
                 </div>
                 <button onmousedown="gallerySites()" id='galleryTog'>
                     <img src="Files/img/icons/arrowDown.png" id='galleryTogImg'/>
                 </button>
-                <img src='Files/img/gallery/image1.png' class='galleryImg' id='galleryImg'>
+                <img src='Files/img/gallery/delong.png' class='galleryImg' id='galleryImg'>
+                <div class='galleryLinks' id='galleryLinks'>
+                    <a href="http://delongyearbooks.weebly.com" target="_blank" id='galleryWebsite'>
+                        <button class='galleryLink'>
+                            View Website
+                        </button>
+                    </a>
+                    <a href="Files/img/gallery/delong.png" target="_blank" id='galleryImage'>
+                        <button class='galleryLink'>
+                            View Full Res Image
+                        </button>
+                    </a>
+                </div>
             </div>
 		</div>
 		<hr style="width:30%; margin-top:25px; margin-bottom:25px;"></hr>
