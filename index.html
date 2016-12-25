@@ -7,6 +7,9 @@
         <script src="Files/js/main.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="theme-color" content="#000064"/>
+        <link rel="prefetch" href="Files/img/gallery/DeLong.png"/>
+        <link rel="prefetch" href="Files/img/gallery/Longfellow.png"/>
+        <link rel="prefetch" href="Files/img/gallery/NorthHigh2016.png"/>
     </head>
     <body id="body">
         <div class="top">
@@ -55,20 +58,27 @@
 		</div>
         <div class="cover" onmousedown="slideMenuInCover()" id="cover"></div>
 		<hr style="width:60%; margin-top:25px; margin-bottom:25px;"></hr>
-		<div class="websites" id="websitesSec">
+		
+        <div class="websites" id="websitesSec">
 			<div class="gallery" id="gallery">
                 <div class="galleryControls" id='galleryControls'>
                     <button 
                             data-image="DeLong.png" 
                             data-url="http://delongyearbooks.weebly.com" 
-                            id="galleryDeLong" onmousedown="galleryImage(this.id), gallerySites()">
+                            id="galleryDeLong" onclick="galleryImage(this.id), gallerySites()">
                         DeLong Yearbooks
                     </button>
                     <button 
                             data-image="Longfellow.png" 
                             data-url="http://longfellowyearbooks.weebly.com" 
-                            id="galleryLongfellow" onmousedown="galleryImage(this.id), gallerySites()">
+                            id="galleryLongfellow" onclick="galleryImage(this.id), gallerySites()">
                         Longfellow Yearbooks
+                    </button>
+                    <button 
+                            data-image="NorthHigh2016.png" 
+                            data-url="http://northyearbooks.weebly.com" 
+                            id="galleryNorthHigh2016" onclick="galleryImage(this.id), gallerySites()">
+                        North High Class of 2016 Yearbook
                     </button>
                 </div>
                 <button onmousedown="gallerySites()" id='galleryTog'>
@@ -90,7 +100,8 @@
             </div>
 		</div>
 		<hr style="width:30%; margin-top:25px; margin-bottom:25px;"></hr>
-		<div class="projects" id="projectsSec">
+        
+        <div class="projects" id="projectsSec">
             <div class="slideAll">
                 <div class="projectControls">
                     <button onmousedown="projectsDown()">
@@ -102,88 +113,80 @@
                 </div>
                 <div class="slideContainer">
 				    <div class="projectSlides" id="projectSlides">
-					   <div class="projectSlide">
-                           <img src="Files/img/icons/svg/school.svg" class="projectImg"/>
-                           <div class="projectDesc">
-                               College and Beyond
-                               <hr/>
-                               <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
-                                   I plan on going to college and doing something with Computer Science/Information Technology.
-                                   After that I would like to have a job that does programming.
-                                   <!--Goals for colleges and life afterwards-->
+				        <div class="projectSlide">
+                            <img src="Files/img/icons/svg/school.svg" class="projectImg"/>
+                            <div class="projectDesc">
+                                College and Beyond
+                                <hr/>
+                                <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
+                                    I plan on going to college and doing something with Computer Science/Information Technology.
+                                    After that I would like to have a job that does programming.
+                                    <!--Goals for colleges and life afterwards-->
+                                </p>
+                            </div>
+					    </div>
+					    <div class="projectSlide">
+                            <img src="Files/img/icons/svg/code.svg" class="projectImg"/>
+                            <div class="projectDesc">
+                                Programming
+                                <hr/>
+                                <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
+                                    I have finished the Python course on
+                                    <a href="https://www.codecademy.com/Vastermaster" target="_blank">Codecademy</a>.
+                                    The reason I learned Python was to make sure programming is something I actually want to do.
+                                    My overall goal is to learn Java and make Android apps/games in a variety of subjects.
+                                    <!--Set a goal for learning different programming languages-->
                                </p>
-                           </div>
-					   </div>
-					   <div class="projectSlide">
-                           <img src="Files/img/icons/svg/code.svg" class="projectImg"/>
-                           <div class="projectDesc">
-                               Programming Languages
-                               <hr/>
-                               <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
-                                   I have finished the python course on
-                                   <a href="https://www.codecademy.com/Vastermaster" target="_blank">Codecademy</a>.
-                                   Currently I am working on a text-based sandbox game.
-                                   <!--Set a goal for learning different programming languages-->
-                               </p>
-                           </div>
-                       </div>
-					   <div class="projectSlide">
-                           <img src="Files/img/icons/svg/logo.svg" class="projectImg"/>
-                           <div class="projectDesc">
-                               This Website
-                               <hr/>
-                               <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
-                                   This website will be updated whenever things change. EX: Going to a different school,
-                                   learning a new skill, making more/complex websites, etc.
-                                   <!--Future plans for this website-->
-                               </p>
-                           </div>
-                       </div>
-					   <div class="projectSlide">
-                           <img src="Files/img/icons/svg/html.svg" class="projectImg"/>
-                           <div class="projectDesc">
-                               2016 North High Yearbook - 
-                               <a href='https://chrisvasterling.github.io/2016Northyearbook/' target="_blank">View Website</a>
-                               <hr/>
-                               <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
-                                   This website is going to be an online version of the 2016 North High yearbook. It will contain
-                                   almost every single page from the yearbook in a structure similar to the yearbook itself.
-                                   <!--Future plans for this website-->
-                               </p>
-                           </div>
+                            </div>
+                        </div>
+                        <div class="projectSlide">
+                            <img src="Files/img/icons/svg/html.svg" class="projectImg"/>
+                            <div class="projectDesc">
+                                Minor / Major Improvements
+                                <hr/>
+                                <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
+                                    I am going to re-build the DeLong and Longfellow yearbook websites so they look better on mobile
+                                    and are easier to navigate.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="projectSlide">
+                            <img src="Files/img/icons/svg/logo.svg" class="projectImg"/>
+                            <div class="projectDesc">
+                                This Website
+                                <hr/>
+                                <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
+                                    This website will be updated whenever I learn a new skill, make another website or decide to
+                                    change the design. The purpose of this website is to show people what type of websites I can
+                                    make and what other skills I have.
+                                    <!--Future plans for this website-->
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <hr style="width:25%; margin-top:25px; margin-bottom:25px;"></hr>
-		<div class="photography" id="photographySec">
+        
+        <div class="photography" id="photographySec">
 			Photography
 		</div>
         <hr style="width:20%; margin-top:25px; margin-bottom:25px;"></hr>
-		<div class="about" id="aboutSec">
-			<div class="aboutTop">
-				<img src="Files/img/icons/svg/personal.svg" style="width:100px;"/>
-				<hr style="width:10%; margin-top:10px; margin-bottom:10px;"></hr>
-				About Me
-				<hr style="width:90%; margin-top:10px; margin-bottom:10px;"></hr>
-			</div>
-            <div class="aboutContainer">
-                <div class="aboutSlide">
-                    HI
-                </div>
-                <div class="aboutSlide">
-                    HI
-                </div>
-            </div>
+		
+        <div class="about" id="aboutSec">
+            About
+        </div>
 		</div>
 		<hr style="width:15%; margin-top:25px; margin-bottom:25px;"></hr>
-		<div class="contact" id="contactSec">
+		
+        <div class="contact" id="contactSec">
 			Contact
 		</div>
-		<br/>
+		<hr style="width:45%; margin-top:25px; margin-bottom:25px;"></hr>
+        <br/>
 		<div class="footer">
-
+            
 		</div>
     </body>
 </html>
