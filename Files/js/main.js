@@ -62,7 +62,7 @@ function gallerySites() {
         tog = document.getElementById('galleryTog'),
         togImg = document.getElementById('galleryTogImg'),
         cont = document.getElementById('galleryControls');
-    cont.style.height = img.clientHeight + 'px'
+    cont.style.height = img.clientHeight - tog.clientHeight + 'px'
     if (viewSites == '0') {
         cont.style.transform = 'translate3d(0px, ' + tog.offsetHeight + 'px, 0px)'
         togImg.style.transform = 'rotateX(180deg)'  
@@ -107,24 +107,35 @@ function galleryImage(website) {
     galleryWebsite.href = website;
     galleryImage.href = gallery.src
 }
-
-
-
-
-function gallery(image_id) {
-	var img_id = document.getElementById(image_id).id,
-		gal = document.getElementById("gallery"),
-		imgLink = document.getElementById("imageLink"),
-		image1Link = "http://delongyearbooks.weebly.com",
-		image2Link = "http://longfellowyearbooks.weebly.com";
-	setTimeout(function() {
-		gal.style.backgroundImage = "url(Files/img/gallery/" + img_id + ".png)";
-		if ( img_id == "image1") {
-			imgLink.href = image1Link;
-		} else if ( img_id == "image2" ) {
-			imgLink.href = image2Link;
-		}; // Add more else if's if there are more images
-	}, 200)
-	
+function photographChange(buttonID) {
+    var button = document.getElementById(buttonID),
+        image = button.dataset.image,
+        pImage = document.getElementById('photographyImage'),
+        filePath = 'Files/img/photography/',
+        vImg = document.getElementById('viewImg'),
+        sImg = document.getElementById('smallImg'),
+        lImg = document.getElementById('largeImg');
+    vImg.href = filePath + image + '_fullres.jpg';
+    sImg.href = filePath + image + '.jpg';
+    lImg.href = filePath + image + '_fullres.jpg';
+    pImage.style.opacity = '0';
+    button.style.boxShadow = '0px 0px 0px black';
+    button.style.transform = 'scale(0.95)';
+    setTimeout( function() {
+        pImage.src = filePath + image + '.jpg';
+        pImage.addEventListener('load', function () {
+            pImage.style.opacity = '1';
+            button.style.boxShadow = '2px 2px 5px black';
+            button.style.transform = 'scale(1)';
+        })
+    }, 500);
 }
-
+function scrollStart() {
+    var stop = document.getElementById('websitesSec').offsetTop - 75,
+        scroll = setInterval(function() {
+            window.scrollBy(0, 10)
+            if (window.pageYOffset >= stop) {
+                clearInterval(scroll)
+            }
+        }, 10);
+}

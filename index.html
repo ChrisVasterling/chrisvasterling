@@ -10,18 +10,22 @@
         <link rel="prefetch" href="Files/img/gallery/DeLong.png"/>
         <link rel="prefetch" href="Files/img/gallery/Longfellow.png"/>
         <link rel="prefetch" href="Files/img/gallery/NorthHigh2016.png"/>
+        <link rel="prefetch" href="Files/img/photography/1.jpg"/>
+        <link rel="prefetch" href="Files/img/photography/2.jpg"/>
+        <link rel="prefetch" href="Files/img/photography/3.jpg"/>
+        <link rel="prefetch" href="Files/img/photography/4.jpg"/>
+        <link rel="prefetch" href="Files/img/photography/5.jpg"/>
+        <link rel="prefetch" href="Files/img/photography/6.jpg"/>
     </head>
     <body id="body">
-        <div class="top">
+        <div class="top" id="top">
             <div class="menuToggle" onmousedown="slideMenuOut(this.id)" id="menuBtn">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
 			<p class="name">Chris Vasterling</p>
-            <div class="quickAccess">
-                Quick access items?
-            </div>
+            <img src="Files/img/icons/svg/arrowDown.svg" onclick="scrollStart()" class="start"/>
         </div>
         <div class="menu" id="menuBtnSlide">
 			<p style="margin: 10px 0px 0px 0px; font-size: 30px; font-family:Raleway; color: rgb(0, 0, 100); text-align:center; margin-bottom:15px;">
@@ -170,7 +174,42 @@
         <hr style="width:25%; margin-top:25px; margin-bottom:25px;"></hr>
         
         <div class="photography" id="photographySec">
-			Photography
+			<div class="photoReel">
+                <div class="photoControlArrows" style="display: none">
+                    <button style="float: left">
+                        <img src="Files/img/icons/svg/arrowLeft.svg" class="photoArrow"/>
+                    </button>
+                    <button style="float: right">
+                        <img src="Files/img/icons/svg/arrowRight.svg" class="photoArrow"/>
+                    </button>
+                </div>
+                <div class="photoControlButtons">
+                    <button data-image="1" id="image1" onmousedown='photographChange(this.id)'>1</button>
+                    <button data-image="2" id="image2" onmousedown='photographChange(this.id)'>2</button>
+                    <button data-image="3" id="image3" onmousedown='photographChange(this.id)'>3</button>
+                    <button data-image="4" id="image4" onmousedown='photographChange(this.id)'>4</button>
+                    <button data-image="5" id="image5" onmousedown='photographChange(this.id)'>5</button>
+                    <button data-image="6" id="image6" onmousedown='photographChange(this.id)'>6</button>
+                </div>
+                <img src="Files/img/photography/1.jpg" id="photographyImage"/>
+                <div class="photoLinks">
+                    <a href="Files/img/photography/1_fullres.jpg" id="viewImg" target="_blank">
+                        <button class="photoLink">
+                            View Image
+                        </button>
+                    </a>
+                    <a href="Files/img/photography/1.jpg" id="smallImg" download="small">
+                        <button class="photoLink">
+                            Download Small
+                        </button>
+                    </a>
+                    <a href="Files/img/photography/1_fullres.jpg" id="largeImg" download="large">
+                        <button class="photoLink">
+                            Download Large
+                        </button>
+                    </a>
+                </div>
+            </div>
 		</div>
         <hr style="width:20%; margin-top:25px; margin-bottom:25px;"></hr>
 		

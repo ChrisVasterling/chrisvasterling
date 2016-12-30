@@ -28,9 +28,6 @@ hr {
 	transition: width 300ms ease-out, opacity 200ms ease-out;
 	transform: translate3d(0px, 0px, 0);
 }
-img {
-    transform: scale3d(1,1,1);
-}
 ::selection {
 	background-color:rgb(0, 0, 100);
 	color:white;
@@ -38,26 +35,30 @@ img {
 .top {
     position: relative;
     width:100%;
-    height: 45%;
+    height: 95%; /*Possible 95%-100%*/
 	min-height:200px;
 	/*background-image:url(../img/bk/water.jpg);*/
-    background-image:url(../img/bk/water2.jpg);
+    /*background-image:url(../img/bk/water2.jpg);*/
 	/*background-image:url(../img/bk/cannon.jpg);*/
 	/*background-image:url(../img/bk/usb.jpg);*/
+    /*background-image:url(../img/bk/hexwall.jpg);*/
+	background-image:url(../img/bk/building.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
 }
-.quickAccess {
-    width:100%;
-    height:10%;
-    min-height:50px;
-    position:absolute;
-    top:90%;
-    background-color: rgba(0, 0, 100, 1);
-    text-align: center;
-    color:white;
-	display:none;
+.start {
+    height: 5%;
+    position: relative;
+    top: 75%;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    cursor: pointer;
+    animation-name: bounce;
+    animation-duration: 750ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 .menuToggle {
     position:fixed;
@@ -105,7 +106,7 @@ img {
     left:-300px;
     background-color: rgb(245, 245, 245);
     z-index: 10;
-    transition: transform 250ms ease-in-out;
+    transition: transform 400ms ease-in-out;
 	overflow-y: hidden;
 }
 .cover {
@@ -134,7 +135,7 @@ img {
 	padding: 15px 0px 15px 0px;
 	cursor:pointer;
 }
-#about, #contact, #photography {
+#about, #contact {
     text-decoration: line-through;
     color: rgb(75, 75, 75);
 }
@@ -166,7 +167,7 @@ img {
     color: red;
     overflow: auto;
 }
-.galleryControls > button, .galleryLink {
+.galleryControls > button, .galleryLink, .photoLink, .photoControlButtons > button {
     border: 0px;
     padding: 10px;
     margin: 10px;
@@ -198,11 +199,13 @@ img {
     transform: rotateX(0deg);
     transition: transform 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
 }
-.galleryLinks {
-    margin: 10px; 
+.galleryLinks, .photoLinks {
+    padding: 10px; 
     color: white;
+    background-color: rgb(80,100,145);
+    text-align: left;
 }
-.galleryLink {
+.galleryLink, .photoLink {
     margin: 5px;
     font-family: Lato;
     font-weight: 300;
@@ -262,7 +265,45 @@ img {
 }
 .photography {
     width:100%;
-    display: none;
+}
+.photoReel {
+    width: 50%;
+    margin-left: 25%;
+    background-color: rgb(225, 225, 225);
+    box-shadow: -5px 5px 15px black;
+    text-align: center;
+}
+.photoControlArrows, .photoControlButtons {
+    width: 100%;
+    overflow:auto;
+    background-color: rgb(80,100,145);
+    text-align: center;
+}
+.photoControlArrows > button {
+    border: 0px;
+    background-color: transparent;
+    cursor: pointer;
+    padding:0px;
+}
+.photoControlButtons > button {
+    border: 3px solid rgba(85,40,10, 1);
+    padding: 5px 10px 5px 10px;
+    box-shadow: 2px 2px 5px black;
+    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+}
+.photoArrow {
+    height: 50px;
+    margin: 10px;
+    display: block;
+}
+.photoReel > img {
+    max-width: calc(100% - 30px);
+    max-height: 500px;
+    margin: 15px;
+    display: block;
+    opacity: 1;
+    transition: opacity 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
+    display: inline-block;
 }
 .about {
 	width:100%;
@@ -283,26 +324,34 @@ img {
 	font-weight: 300; 
 	padding: 5px 0px 5px 0px;
 }
+@keyframes bounce {
+    0% {
+        transform: translate3d(-50%, 50%, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
 @media screen and (max-width: 1150px) {
-	.gallery {
+	.gallery, .photoReel {
 		width:65%;
 		margin-left:calc(35%  / 2);
 	}
 }
 @media screen and (max-width: 950px) {
-	.gallery, .slideAll {
+	.gallery, .slideAll, .photoReel {
 		width:75%;
 		margin-left:calc(25%  / 2);
 	}
 }
 @media screen and (max-width: 850px) {
-	.gallery, .slideAll {
+	.gallery, .slideAll, .photoReel {
 		width:85%;
 		margin-left:calc(15%  / 2);
 	}
 }
 @media screen and (max-width: 750px) {
-	.gallery, .slideAll {
+	.gallery, .slideAll, .photoReel {
 		width:95%;
 		margin-left:calc(5% / 2);
 	}
