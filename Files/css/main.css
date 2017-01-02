@@ -6,8 +6,6 @@ html, body {
 	padding:0px;
     font-family: Raleway;
     font-weight: 300;
-    height: 100%;
-	width:100%;
 	background-color:rgb(245, 245, 245);
 }
 a {
@@ -35,14 +33,13 @@ hr {
 .top {
     position: relative;
     width:100%;
-    height: 95%; /*Possible 95%-100%*/
+    height: 100vh;
 	min-height:200px;
 	/*background-image:url(../img/bk/water.jpg);*/
     /*background-image:url(../img/bk/water2.jpg);*/
-	/*background-image:url(../img/bk/cannon.jpg);*/
-	/*background-image:url(../img/bk/usb.jpg);*/
+    background-image:url(../img/bk/bench.jpg);
     /*background-image:url(../img/bk/hexwall.jpg);*/
-	background-image:url(../img/bk/building.jpg);
+	/*background-image:url(../img/bk/building.jpg);*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -54,25 +51,30 @@ hr {
     left: 50%;
     transform: translate3d(-50%, 0, 0);
     cursor: pointer;
-    animation-name: bounce;
-    animation-duration: 750ms;
+    display: block;
+    animation-name: start;
+    animation-duration: 1000ms;
+    animation-delay: 750ms;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 .menuToggle {
     position:fixed;
+    top: 10px;
+    left: 10px;
     /* Becomes a circle
-    top:15px;
-    left:15px;
-    border-radius: 50%;
+        top:15px;
+        left:15px;
+        border-radius: 50%;
     */
-    display:inline-block;
+    display:none;
+    opacity: 0;
     padding:8px 5px 8px 5px;
     //background-color:rgba(85,40,10, 1);
     background-color: rgba(0, 0, 100, 1);
     cursor:pointer;
-    transition: background-color 0.2s ease;
+    transition: opacity 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
     z-index:10;
 }
 .menuToggle > .bar {
@@ -84,8 +86,9 @@ hr {
 }
 .name {
 	position:absolute;
-    top:calc(50% - 10%);
-    left:5%;
+    top: 30%;
+    left: 5%;
+    opacity: 0;
     font-size:40px;
     font-weight: 300;
 	font-family: Raleway;
@@ -96,6 +99,12 @@ hr {
     margin:0px;
     padding: 5px 0px 5px 0px;
     box-shadow: 5px 5px 15px black;
+    display: block;
+    animation-name: floatNameIn;
+    animation-duration: 750ms;
+    animation-delay: 500ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
 .menu {
     width:300px;
@@ -167,7 +176,7 @@ hr {
     color: red;
     overflow: auto;
 }
-.galleryControls > button, .galleryLink, .photoLink, .photoControlButtons > button {
+.galleryControls > button, .galleryLink, .photoLink, .photoButton {
     border: 0px;
     padding: 10px;
     margin: 10px;
@@ -285,25 +294,37 @@ hr {
     cursor: pointer;
     padding:0px;
 }
-.photoControlButtons > button {
+.photoButton {
     border: 3px solid rgba(85,40,10, 1);
     padding: 5px 10px 5px 10px;
     box-shadow: 2px 2px 5px black;
-    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+    transition: box-shadow 200ms cubic-bezier(0.75,-0.20, 0.25, 1.55), transform 200ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
+    margin: 10px 5px 10px 5px;
 }
 .photoArrow {
     height: 50px;
     margin: 10px;
     display: block;
 }
-.photoReel > img {
+.photographyImage {
     max-width: calc(100% - 30px);
     max-height: 500px;
     margin: 15px;
     display: block;
     opacity: 1;
+    box-shadow: 5px 5px 15px black;
     transition: opacity 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
     display: inline-block;
+}
+.photographyFull, .photoReelFull {
+    width: 100%;
+    height: 100%;
+}
+.photoButtonFull {
+    margin:10px;
+}
+.photoReelFull {
+    margin-left: 0px;
 }
 .about {
 	width:100%;
@@ -324,12 +345,22 @@ hr {
 	font-weight: 300; 
 	padding: 5px 0px 5px 0px;
 }
-@keyframes bounce {
+@keyframes floatNameIn {
     0% {
-        transform: translate3d(-50%, 50%, 0);
+        top: 30%;
+        opacity: 0;
     }
     100% {
-        transform: translate3d(-50%, 0, 0);
+        top: 25%;
+        opacity: 1;
+    }
+}
+@keyframes start {
+    0% {
+        transform: translate3d(-50%, 0, 0) scale(1);
+    }
+    100% {
+        transform: translate3d(-50%, 75%, 0) scale(.85);
     }
 }
 @media screen and (max-width: 1150px) {
@@ -355,6 +386,9 @@ hr {
 		width:95%;
 		margin-left:calc(5% / 2);
 	}
+    .photoReel > img {
+        max-height: 300px;
+    }
 	
 }
 @media screen and (max-width: 650px) {

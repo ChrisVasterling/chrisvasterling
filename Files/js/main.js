@@ -106,6 +106,7 @@ function galleryImage(website) {
     gallery.src = image;
     galleryWebsite.href = website;
     galleryImage.href = gallery.src
+    gallery.addEventListener('load', gallerySites() )
 }
 function photographChange(buttonID) {
     var button = document.getElementById(buttonID),
@@ -130,12 +131,99 @@ function photographChange(buttonID) {
         })
     }, 500);
 }
+function displayMorePhotos(dispHide) {
+    var more = document.getElementById('morePhotos'),
+        photosMore = document.getElementById('photosMore');
+    if (dispHide == 'display') {
+        more.style.display = "inline";
+        photosMore.innerHTML = 'Less Photos'
+        photosMore.setAttribute('onclick', 'displayMorePhotos("hide")')
+    } else if (dispHide == 'hide') {
+        more.style.display = "none";
+        photosMore.innerHTML = 'More Photos'
+        photosMore.setAttribute('onclick', 'displayMorePhotos("display")')
+    }
+}
+function toggleFullscreen(button){
+	var isfullscreen = document.getElementById(button).dataset.fullscreen,
+        fullscreen = document.getElementById(button),
+        photography = document.getElementById('photographySec'),
+        image = document.getElementById('photographyImage'),
+        pLinks = document.getElementById('photoLinks'),
+        PCButtons = document.getElementById('photoControlButtons').offsetHeight + 30,
+        photoReel = document.getElementById('photoReel'),
+        photoButtons = document.getElementsByClassName('photoButton');
+    if (isfullscreen == 'false'){
+        origImageMaxH = window.getComputedStyle(image).getPropertyValue('max-height')
+        if (photography.requestFullScreen) {
+            photography.requestFullScreen();
+        } else if (photography.webkitRequestFullscreen) {
+            photography.webkitRequestFullscreen();
+        } else if (photography.mozRequestFullScreen) {
+            photography.mozRequestFullScreen();
+        } else if (photography.msRequestFullscreen) {
+            photography.msRequestFullscreen();
+        }
+        fullscreen.setAttribute('data-fullscreen', 'true');
+        fullscreen.innerHTML = 'Exit Fullscreen';
+        pLinks.style.display = 'none';
+        photography.classList.add('photographyFull');
+        photoReel.classList.add('photoReelFull');
+        image.style.maxHeight = 'calc(100% - ' + PCButtons + 'px)';
+        displayMorePhotos('display');
+        /*Subtract 1 because of fullscreen button*/
+        for (i = 1; i <= photoButtons.length - 1; i++) {
+            var currImg = document.getElementById('image' + i);
+            currImg.classList.add('photoButtonFull');
+        }
+    } else {
+        if (document.cancelFullScreen) {
+            document.cancelFullScreen();
+        } else if (document.exitFullScreen) {
+                document.exitFullScreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+        fullscreen.setAttribute('data-fullscreen', 'false');
+        isfullscreen = 'false';
+        fullscreen.innerHTML = "Fullscreen";
+        pLinks.style.display = 'block';
+        photography.classList.remove('photographyFull');
+        photoReel.classList.remove('photoReelFull');
+        image.style.maxHeight = origImageMaxH;
+        displayMorePhotos('hide');
+        photographChange('image1');
+        /*Subtract 1 because of fullscreen button*/
+        for (i = 1; i <= photoButtons.length - 1; i++) {
+            var currImg = document.getElementById('image' + i);
+            currImg.classList.remove('photoButtonFull');
+        }
+    }
+}
 function scrollStart() {
-    var stop = document.getElementById('websitesSec').offsetTop - 75,
+    setTimeout(function() {
+        var stop = document.getElementById('websitesSec').offsetTop - 75,
         scroll = setInterval(function() {
             window.scrollBy(0, 10)
             if (window.pageYOffset >= stop) {
                 clearInterval(scroll)
             }
         }, 10);
+    }, 100)
+    
 }
+window.addEventListener('scroll', function() {
+    var menuToggle = document.getElementById('menuBtn'),
+        display = document.getElementById('websitesSec').offsetTop - 75;
+    if (window.pageYOffset >= display) {
+        menuToggle.style.display = 'inline-block';
+        setTimeout(function() {
+            menuToggle.style.opacity = '1'
+        }, 100)
+    }
+    
+});

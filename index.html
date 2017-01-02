@@ -24,8 +24,10 @@
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
-			<p class="name">Chris Vasterling</p>
-            <img src="Files/img/icons/svg/arrowDown.svg" onclick="scrollStart()" class="start"/>
+			<div class="name">
+                Chris Vasterling
+            </div>
+            <img src="Files/img/icons/svg/arrowDown.svg" onmousedown="scrollStart()" class="start"/>
         </div>
         <div class="menu" id="menuBtnSlide">
 			<p style="margin: 10px 0px 0px 0px; font-size: 30px; font-family:Raleway; color: rgb(0, 0, 100); text-align:center; margin-bottom:15px;">
@@ -69,19 +71,19 @@
                     <button 
                             data-image="DeLong.png" 
                             data-url="http://delongyearbooks.weebly.com" 
-                            id="galleryDeLong" onclick="galleryImage(this.id), gallerySites()">
+                            id="galleryDeLong" onclick="galleryImage(this.id)">
                         DeLong Yearbooks
                     </button>
                     <button 
                             data-image="Longfellow.png" 
                             data-url="http://longfellowyearbooks.weebly.com" 
-                            id="galleryLongfellow" onclick="galleryImage(this.id), gallerySites()">
+                            id="galleryLongfellow" onclick="galleryImage(this.id)">
                         Longfellow Yearbooks
                     </button>
                     <button 
                             data-image="NorthHigh2016.png" 
                             data-url="http://northyearbooks.weebly.com" 
-                            id="galleryNorthHigh2016" onclick="galleryImage(this.id), gallerySites()">
+                            id="galleryNorthHigh2016" onclick="galleryImage(this.id)">
                         North High Class of 2016 Yearbook
                     </button>
                 </div>
@@ -173,8 +175,8 @@
         </div>
         <hr style="width:25%; margin-top:25px; margin-bottom:25px;"></hr>
         
-        <div class="photography" id="photographySec">
-			<div class="photoReel">
+        <div class="photography" id="photographySec" allowfullscreen>
+			<div class="photoReel" id='photoReel'>
                 <div class="photoControlArrows" style="display: none">
                     <button style="float: left">
                         <img src="Files/img/icons/svg/arrowLeft.svg" class="photoArrow"/>
@@ -183,16 +185,29 @@
                         <img src="Files/img/icons/svg/arrowRight.svg" class="photoArrow"/>
                     </button>
                 </div>
-                <div class="photoControlButtons">
-                    <button data-image="1" id="image1" onmousedown='photographChange(this.id)'>1</button>
-                    <button data-image="2" id="image2" onmousedown='photographChange(this.id)'>2</button>
-                    <button data-image="3" id="image3" onmousedown='photographChange(this.id)'>3</button>
-                    <button data-image="4" id="image4" onmousedown='photographChange(this.id)'>4</button>
-                    <button data-image="5" id="image5" onmousedown='photographChange(this.id)'>5</button>
-                    <button data-image="6" id="image6" onmousedown='photographChange(this.id)'>6</button>
+                <div class="photoControlButtons" id='photoControlButtons'>
+                    <button data-image="1" class="photoButton" id="image1" onmousedown='photographChange(this.id)'>1</button>
+                    <button data-image="2" class="photoButton" id="image2" onmousedown='photographChange(this.id)'>2</button>
+                    <button data-image="3" class="photoButton" id="image3" onmousedown='photographChange(this.id)'>3</button>
+                    <button data-image="4" class="photoButton" id="image4" onmousedown='photographChange(this.id)'>4</button>
+                    <button data-image="5" class="photoButton" id="image5" onmousedown='photographChange(this.id)'>5</button>
+                    <div id='morePhotos' style='display: none;'>
+                        <button data-image="6" class="photoButton" id="image6" onmousedown='photographChange(this.id)'>6</button>
+                        <button data-image="7" class="photoButton" id="image7" onmousedown='photographChange(this.id)'>7</button>
+                        <button data-image="8" class="photoButton" id="image8" onmousedown='photographChange(this.id)'>8</button>
+                        <button data-image="9" class="photoButton" id="image9" onmousedown='photographChange(this.id)'>9</button>
+                        <button data-image="10" class="photoButton" id="image10" onmousedown='photographChange(this.id)'>10</button>
+                    </div>
+                    <br/>
+                    <button class="photoButton" id='fullscreen' data-fullscreen="false" onclick='toggleFullscreen(this.id)' style="box-shadow:0px 0px;">
+                        Fullscreen
+                    </button>
+                    <button class="photoButton" id='photosMore' data-fullscreen="false" onclick='displayMorePhotos("display")' style="box-shadow:0px 0px;">
+                        More Photos
+                    </button>
                 </div>
-                <img src="Files/img/photography/1.jpg" id="photographyImage"/>
-                <div class="photoLinks">
+                <img src="Files/img/photography/1.jpg" class="photographyImage" id="photographyImage"/>
+                <div class="photoLinks" id='photoLinks'>
                     <a href="Files/img/photography/1_fullres.jpg" id="viewImg" target="_blank">
                         <button class="photoLink">
                             View Image
