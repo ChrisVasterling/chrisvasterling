@@ -101,7 +101,7 @@ function galleryImage(website) {
     var image = "Files/img/gallery/" + document.getElementById(website).dataset.image,
         website = document.getElementById(website).dataset.url,
         galleryWebsite = document.getElementById('galleryWebsite'),
-        galleryImage = document.getElementById('galleryImage')
+        galleryImage = document.getElementById('galleryImage'),
         gallery = document.getElementById('galleryImg');
     gallery.src = image;
     galleryWebsite.href = website;
@@ -172,7 +172,7 @@ function toggleFullscreen(button){
         image.style.maxHeight = 'calc(100% - ' + PCButtons + 'px)';
         displayMorePhotos('display');
         /*Subtract 1 because of fullscreen button*/
-        for (i = 1; i <= photoButtons.length - 1; i++) {
+        for (i = 1; i <= photoButtons.length - 2; i++) {
             var currImg = document.getElementById('image' + i);
             currImg.classList.add('photoButtonFull');
         }
@@ -198,7 +198,7 @@ function toggleFullscreen(button){
         displayMorePhotos('hide');
         photographChange('image1');
         /*Subtract 1 because of fullscreen button*/
-        for (i = 1; i <= photoButtons.length - 1; i++) {
+        for (i = 1; i <= photoButtons.length - 2; i++) {
             var currImg = document.getElementById('image' + i);
             currImg.classList.remove('photoButtonFull');
         }
@@ -208,7 +208,7 @@ function scrollStart() {
     setTimeout(function() {
         var stop = document.getElementById('websitesSec').offsetTop - 75,
         scroll = setInterval(function() {
-            window.scrollBy(0, 10)
+            window.scrollBy(0, 20)
             if (window.pageYOffset >= stop) {
                 clearInterval(scroll)
             }

@@ -44,20 +44,42 @@ hr {
     background-size: cover;
     background-position: 50% 50%;
 }
-.start {
-    height: 5%;
+.startBox {
     position: relative;
     top: 75%;
     left: 50%;
     transform: translate3d(-50%, 0, 0);
-    cursor: pointer;
-    display: block;
-    animation-name: start;
-    animation-duration: 1000ms;
-    animation-delay: 750ms;
+    display: inline-block;
+    animation-name: startBox;
+    animation-duration: 2000ms;
+    animation-delay: 1000ms;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    animation-direction: alternate;
+}
+.start {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    display: block;
+    transform:  rotateZ(45deg);
+    animation-name: start;
+    animation-duration: 2000ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    border-bottom: 5px solid rgb(0, 0, 50);
+    border-right: 5px solid rgb(0, 0, 50);
+    opacity: 1;
+}
+.top span:nth-of-type(1) {
+    animation-delay: 1500ms;
+}
+.top span:nth-of-type(2) {
+    margin-top:-30px;
+    animation-delay: 1250ms;
+}
+.top span:nth-of-type(3) {
+    margin-top:-30px;
+    animation-delay: 1000ms;
 }
 .menuToggle {
     position:fixed;
@@ -86,7 +108,7 @@ hr {
 }
 .name {
 	position:absolute;
-    top: 30%;
+    top: 25%;
     left: 5%;
     opacity: 0;
     font-size:40px;
@@ -324,7 +346,9 @@ hr {
     margin:10px;
 }
 .photoReelFull {
-    margin-left: 0px;
+    margin-left: 0px !important;
+    width: 100% !important;
+    box-shadow: 0px 0px;
 }
 .about {
 	width:100%;
@@ -347,20 +371,34 @@ hr {
 }
 @keyframes floatNameIn {
     0% {
-        top: 30%;
         opacity: 0;
     }
     100% {
-        top: 25%;
         opacity: 1;
     }
 }
 @keyframes start {
     0% {
-        transform: translate3d(-50%, 0, 0) scale(1);
+        opacity: 1;
+        
+    }
+    25% {
+        opacity: .25;
+        
+    }
+    75%, 100%{
+        opacity: 1;
+    }
+}
+@keyframes startBox {
+    0% {
+        transform: translate3d(-50%, 0%, 0px);
+    }
+    50% {
+        transform: translate3d(-50%, 50%, 0px);
     }
     100% {
-        transform: translate3d(-50%, 75%, 0) scale(.85);
+        transform: translate3d(-50%, 0%, 0px);
     }
 }
 @media screen and (max-width: 1150px) {
