@@ -22,7 +22,7 @@ button {
 hr {
 	display:block; 
 	border:0px solid transparent; 
-	border-top:3px solid rgba(85,40,10, 1);
+	border-top:3px solid rgba(80, 40, 35, 1);
 	transition: width 300ms ease-out, opacity 200ms ease-out;
 	transform: translate3d(0px, 0px, 0);
 }
@@ -50,7 +50,8 @@ hr {
     left: 50%;
     transform: translate3d(-50%, 0, 0);
     display: inline-block;
-    animation-name: startBox;
+    /*animation-name: startBox;*/
+    animation-name: None;
     animation-duration: 2000ms;
     animation-delay: 1000ms;
     animation-timing-function: ease-in-out;
@@ -68,7 +69,7 @@ hr {
     animation-iteration-count: infinite;
     border-bottom: 5px solid rgb(0, 0, 50);
     border-right: 5px solid rgb(0, 0, 50);
-    opacity: 1;
+    opacity: .25;
 }
 .top span:nth-of-type(1) {
     animation-delay: 1500ms;
@@ -120,7 +121,7 @@ hr {
     text-align: center;
     margin:0px;
     padding: 5px 0px 5px 0px;
-    box-shadow: 5px 5px 15px black;
+    box-shadow: 5px 5px 10px black;
     display: block;
     animation-name: floatNameIn;
     animation-duration: 750ms;
@@ -177,7 +178,7 @@ hr {
 	width:55%;
 	margin-left:calc(45% / 2);
 	background-color:rgb(80,100,145);
-	overflow-y: hidden;
+	overflow: hidden;
     position: relative;
     box-shadow: -5px 5px 15px black;
 }
@@ -186,6 +187,8 @@ hr {
     height: auto;
     z-index: 0;
     display: block;
+    opacity: 1;
+    transition: opacity 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55), transform 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
 }
 .galleryControls {
     z-index: 1;
@@ -194,9 +197,13 @@ hr {
     position: absolute;
     transform: translate3d(0px, -100%, 0px);
     transition: transform 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
-    background-color: rgba(225, 225, 225, 0.7);
+    background-color: rgba(80,100,145, .7);
     color: red;
     overflow: auto;
+}
+.galleryControls > button {
+    box-shadow: 2px 2px 5px black;
+    transition: box-shadow 200ms cubic-bezier(0.75,-0.20, 0.25, 1.55), transform 200ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
 }
 .galleryControls > button, .galleryLink, .photoLink, .photoButton {
     border: 0px;
@@ -252,14 +259,13 @@ hr {
 .slideContainer {
 	width:100%;
 	overflow:hidden;
-	height: 250px;
+	height: 400px; /*must match slideContainer, projectSlide(s)*/
 	background-color:rgb(225, 225, 225);
 }
 .projectSlides {
-	width: 100%; 
-	height: 250px;
 	transition: transform 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
 	transform: translate3d(0px, 0px, 0);
+    height: 400px; /*must match slideContainer, projectSlide(s)*/
 }
 .projectControls {
 	width:100%;
@@ -279,20 +285,24 @@ hr {
 }
 .projectSlide {
 	width: 100%;
-	height: 250px;
+	height: 400px; /*must match slideContainer, projectSlide(s)*/
 	overflow:hidden;
 }
 .projectImg, .projectDesc {
 	position:relative; 
 	top:50px;
 	margin: 0px 25px 0px 25px;
-	float:left; 
 	font-size:25px;
 	height:150px;
 }
 .projectDesc {
-	float:none;
     height: auto;
+}
+.projectImg {
+    transition: transform 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
+    box-shadow: -5px 5px 10px black;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 100);
 }
 .photography {
     width:100%;
@@ -300,28 +310,28 @@ hr {
 .photoReel {
     width: 50%;
     margin-left: 25%;
-    background-color: rgb(225, 225, 225);
+    background-color: rgb(80,100,145);
     box-shadow: -5px 5px 15px black;
     text-align: center;
 }
-.photoControlArrows, .photoControlButtons {
+.photoControlButtons {
     width: 100%;
     overflow:auto;
     background-color: rgb(80,100,145);
     text-align: center;
 }
-.photoControlArrows > button {
-    border: 0px;
-    background-color: transparent;
-    cursor: pointer;
-    padding:0px;
-}
-.photoButton {
+.photoButton, .morePhotoButton {
     border: 3px solid rgba(85,40,10, 1);
     padding: 5px 10px 5px 10px;
     box-shadow: 2px 2px 5px black;
-    transition: box-shadow 200ms cubic-bezier(0.75,-0.20, 0.25, 1.55), transform 200ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
+    transition: box-shadow 200ms cubic-bezier(0.75,-0.20, 0.25, 1.55), 
+                transform 200ms cubic-bezier(0.75,-0.20, 0.25, 1.55),
+                opacity 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
     margin: 10px 5px 10px 5px;
+    cursor: pointer;
+}
+.morePhotosButton {
+    display: none;
 }
 .photoArrow {
     height: 50px;
@@ -332,23 +342,10 @@ hr {
     max-width: calc(100% - 30px);
     max-height: 500px;
     margin: 15px;
-    display: block;
     opacity: 1;
     box-shadow: 5px 5px 15px black;
-    transition: opacity 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
+    transition: opacity 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55), transform 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
     display: inline-block;
-}
-.photographyFull, .photoReelFull {
-    width: 100%;
-    height: 100%;
-}
-.photoButtonFull {
-    margin:10px;
-}
-.photoReelFull {
-    margin-left: 0px !important;
-    width: 100% !important;
-    box-shadow: 0px 0px;
 }
 .about {
 	width:100%;
@@ -379,15 +376,15 @@ hr {
 }
 @keyframes start {
     0% {
-        opacity: 1;
-        
-    }
-    25% {
         opacity: .25;
         
     }
-    75%, 100%{
+    25% {
         opacity: 1;
+        
+    }
+    75%, 100%{
+        opacity: .25;
     }
 }
 @keyframes startBox {
@@ -429,13 +426,14 @@ hr {
     }
 	
 }
-@media screen and (max-width: 650px) {
-    .projectImg {
-		display:none;
-	}
-}
 @media screen and (max-width: 360px) {
     .slideContainer, .projectSlides, .projectSlide {
         height: 350px;
+    }
+    .projectImg {
+        height: 100px;
+    }
+    .projectImg, .projectDesc {
+        top: 25px;
     }
 }

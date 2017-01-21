@@ -16,6 +16,10 @@
         <link rel="prefetch" href="Files/img/photography/4.jpg"/>
         <link rel="prefetch" href="Files/img/photography/5.jpg"/>
         <link rel="prefetch" href="Files/img/photography/6.jpg"/>
+        <link rel="prefetch" href="Files/img/photography/7.jpg"/>
+        <link rel="prefetch" href="Files/img/photography/8.jpg"/>
+        <link rel="prefetch" href="Files/img/photography/9.jpg"/>
+        <link rel="prefetch" href="Files/img/photography/10.jpg"/>
     </head>
     <body id="body">
         <div class="top" id="top">
@@ -62,7 +66,7 @@
 			<hr style="width:0%; margin-top:-10px;" id="contactHr"></hr>
 			<!--Menu Buttons-->
 			<div style="text-align:center;">
-				<img src="Files/img/icons/svg/logo.svg" style="width:25%; position:relative; top:10px; display:inline-block; margin-bottom:15px;"/>
+				<img src="Files/img/icons/svg/me.svg" style="width:25%; position:relative; top:10px; display:inline-block; margin-bottom:15px;"/>
 			</div>
 			<hr style="width:40%;"></hr>
 		</div>
@@ -75,19 +79,19 @@
                     <button 
                             data-image="DeLong.png" 
                             data-url="http://delongyearbooks.weebly.com" 
-                            id="galleryDeLong" onclick="galleryImage(this.id)">
+                            id="galleryDeLong" onmousedown="galleryImage(this.id)">
                         DeLong Yearbooks
                     </button>
                     <button 
                             data-image="Longfellow.png" 
                             data-url="http://longfellowyearbooks.weebly.com" 
-                            id="galleryLongfellow" onclick="galleryImage(this.id)">
+                            id="galleryLongfellow" onmousedown="galleryImage(this.id)">
                         Longfellow Yearbooks
                     </button>
                     <button 
                             data-image="NorthHigh2016.png" 
                             data-url="http://northyearbooks.weebly.com" 
-                            id="galleryNorthHigh2016" onclick="galleryImage(this.id)">
+                            id="galleryNorthHigh2016" onmousedown="galleryImage(this.id)">
                         North High Class of 2016 Yearbook
                     </button>
                 </div>
@@ -184,21 +188,13 @@
         
         <div class="photography" id="photographySec" allowfullscreen>
 			<div class="photoReel" id='photoReel'>
-                <div class="photoControlArrows" style="display: none">
-                    <button style="float: left">
-                        <img src="Files/img/icons/svg/arrowLeft.svg" class="photoArrow"/>
-                    </button>
-                    <button style="float: right">
-                        <img src="Files/img/icons/svg/arrowRight.svg" class="photoArrow"/>
-                    </button>
-                </div>
                 <div class="photoControlButtons" id='photoControlButtons'>
                     <button data-image="1" class="photoButton" id="image1" onmousedown='photographChange(this.id)'>1</button>
                     <button data-image="2" class="photoButton" id="image2" onmousedown='photographChange(this.id)'>2</button>
                     <button data-image="3" class="photoButton" id="image3" onmousedown='photographChange(this.id)'>3</button>
                     <button data-image="4" class="photoButton" id="image4" onmousedown='photographChange(this.id)'>4</button>
                     <button data-image="5" class="photoButton" id="image5" onmousedown='photographChange(this.id)'>5</button>
-                    <div id='morePhotos' style='display: none;'>
+                    <div id='morePhotos' class='morePhotosButton'>
                         <button data-image="6" class="photoButton" id="image6" onmousedown='photographChange(this.id)'>6</button>
                         <button data-image="7" class="photoButton" id="image7" onmousedown='photographChange(this.id)'>7</button>
                         <button data-image="8" class="photoButton" id="image8" onmousedown='photographChange(this.id)'>8</button>
@@ -206,9 +202,6 @@
                         <button data-image="10" class="photoButton" id="image10" onmousedown='photographChange(this.id)'>10</button>
                     </div>
                     <br/>
-                    <button class="photoButton" id='fullscreen' data-fullscreen="false" onclick='toggleFullscreen(this.id)' style="box-shadow:0px 0px;">
-                        Fullscreen
-                    </button>
                     <button class="photoButton" id='photosMore' data-fullscreen="false" onclick='displayMorePhotos("display")' style="box-shadow:0px 0px;">
                         More Photos
                     </button>

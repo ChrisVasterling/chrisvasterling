@@ -7,6 +7,7 @@ window.addEventListener("load", function () {
 	var slideAmount = document.getElementsByClassName("projectSlide").length;
     // take the number of slides and multiply it by 100 (for percentage height total)
     maxYval = slideAmount * 100;
+    fromFullscreen = 'false';
 });
 function slideMenuIn(btn) {
 	var b = document.getElementById("menuBtn"),
@@ -99,14 +100,24 @@ function projectsDown() {
 }
 function galleryImage(website) {
     var image = "Files/img/gallery/" + document.getElementById(website).dataset.image,
-        website = document.getElementById(website).dataset.url,
+        website = document.getElementById(website),
         galleryWebsite = document.getElementById('galleryWebsite'),
         galleryImage = document.getElementById('galleryImage'),
         gallery = document.getElementById('galleryImg');
-    gallery.src = image;
-    galleryWebsite.href = website;
-    galleryImage.href = gallery.src
-    gallery.addEventListener('load', gallerySites() )
+    gallery.style.opacity = '0';
+    website.style.boxShadow = '0px 0px 0px black';
+    website.style.transform = 'scale(0.95)';
+    gallery.style.transform = "scale(.95)";
+    gallery.addEventListener("load", gallerySites);
+    setTimeout( function () {
+        gallery.style.opacity = '1';
+        gallery.style.transform = "scale(1)";
+        website.style.boxShadow = '2px 2px 5px black';
+        website.style.transform = 'scale(1)';
+        gallery.src = image;
+        galleryWebsite.href = website.dataset.url;
+        galleryImage.href = image;
+    }, 500)
 }
 function photographChange(buttonID) {
     var button = document.getElementById(buttonID),
@@ -115,17 +126,21 @@ function photographChange(buttonID) {
         filePath = 'Files/img/photography/',
         vImg = document.getElementById('viewImg'),
         sImg = document.getElementById('smallImg'),
-        lImg = document.getElementById('largeImg');
+        lImg = document.getElementById('largeImg'),
+        pLinks = document.getElementById('photoLinks'),
+        PCButtons = document.getElementById('photoControlButtons').offsetHeight + 30 + pLinks.offsetHeight;
     vImg.href = filePath + image + '_fullres.jpg';
     sImg.href = filePath + image + '.jpg';
     lImg.href = filePath + image + '_fullres.jpg';
     pImage.style.opacity = '0';
+    pImage.style.transform = 'scale(.95)';
     button.style.boxShadow = '0px 0px 0px black';
     button.style.transform = 'scale(0.95)';
     setTimeout( function() {
         pImage.src = filePath + image + '.jpg';
         pImage.addEventListener('load', function () {
             pImage.style.opacity = '1';
+            pImage.style.transform = 'scale(1)';
             button.style.boxShadow = '2px 2px 5px black';
             button.style.transform = 'scale(1)';
         })
@@ -133,7 +148,8 @@ function photographChange(buttonID) {
 }
 function displayMorePhotos(dispHide) {
     var more = document.getElementById('morePhotos'),
-        photosMore = document.getElementById('photosMore');
+        photosMore = document.getElementById('photosMore'),
+        pButtons = document.getElementById('photoButton');
     if (dispHide == 'display') {
         more.style.display = "inline";
         photosMore.innerHTML = 'Less Photos'
@@ -142,66 +158,6 @@ function displayMorePhotos(dispHide) {
         more.style.display = "none";
         photosMore.innerHTML = 'More Photos'
         photosMore.setAttribute('onclick', 'displayMorePhotos("display")')
-    }
-}
-function toggleFullscreen(button){
-	var isfullscreen = document.getElementById(button).dataset.fullscreen,
-        fullscreen = document.getElementById(button),
-        photography = document.getElementById('photographySec'),
-        image = document.getElementById('photographyImage'),
-        pLinks = document.getElementById('photoLinks'),
-        PCButtons = document.getElementById('photoControlButtons').offsetHeight + 30,
-        photoReel = document.getElementById('photoReel'),
-        photoButtons = document.getElementsByClassName('photoButton');
-    if (isfullscreen == 'false'){
-        origImageMaxH = window.getComputedStyle(image).getPropertyValue('max-height')
-        if (photography.requestFullScreen) {
-            photography.requestFullScreen();
-        } else if (photography.webkitRequestFullscreen) {
-            photography.webkitRequestFullscreen();
-        } else if (photography.mozRequestFullScreen) {
-            photography.mozRequestFullScreen();
-        } else if (photography.msRequestFullscreen) {
-            photography.msRequestFullscreen();
-        }
-        fullscreen.setAttribute('data-fullscreen', 'true');
-        fullscreen.innerHTML = 'Exit Fullscreen';
-        pLinks.style.display = 'none';
-        photography.classList.add('photographyFull');
-        photoReel.classList.add('photoReelFull');
-        image.style.maxHeight = 'calc(100% - ' + PCButtons + 'px)';
-        displayMorePhotos('display');
-        /*Subtract 1 because of fullscreen button*/
-        for (i = 1; i <= photoButtons.length - 2; i++) {
-            var currImg = document.getElementById('image' + i);
-            currImg.classList.add('photoButtonFull');
-        }
-    } else {
-        if (document.cancelFullScreen) {
-            document.cancelFullScreen();
-        } else if (document.exitFullScreen) {
-                document.exitFullScreen();
-        } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-        } else if (document.webkitCancelFullScreen) {
-            document.webkitCancelFullScreen();
-        } else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
-        }
-        fullscreen.setAttribute('data-fullscreen', 'false');
-        isfullscreen = 'false';
-        fullscreen.innerHTML = "Fullscreen";
-        pLinks.style.display = 'block';
-        photography.classList.remove('photographyFull');
-        photoReel.classList.remove('photoReelFull');
-        image.style.maxHeight = origImageMaxH;
-        displayMorePhotos('hide');
-        photographChange('image1');
-        /*Subtract 1 because of fullscreen button*/
-        for (i = 1; i <= photoButtons.length - 2; i++) {
-            var currImg = document.getElementById('image' + i);
-            currImg.classList.remove('photoButtonFull');
-        }
     }
 }
 function scrollStart() {
@@ -218,7 +174,8 @@ function scrollStart() {
 }
 window.addEventListener('scroll', function() {
     var menuToggle = document.getElementById('menuBtn'),
-        display = document.getElementById('websitesSec').offsetTop - 75;
+        topHalf = document.getElementById('top').offsetHeight / 2,
+        display = document.getElementById('websitesSec').offsetTop - topHalf - (topHalf / 2);
     if (window.pageYOffset >= display) {
         menuToggle.style.display = 'inline-block';
         setTimeout(function() {
@@ -227,3 +184,4 @@ window.addEventListener('scroll', function() {
     }
     
 });
+
