@@ -7,7 +7,6 @@ window.addEventListener("load", function () {
 	var slideAmount = document.getElementsByClassName("projectSlide").length;
     // take the number of slides and multiply it by 100 (for percentage height total)
     maxYval = slideAmount * 100;
-    fromFullscreen = 'false';
 });
 function slideMenuIn(btn) {
 	var b = document.getElementById("menuBtn"),
@@ -108,12 +107,14 @@ function galleryImage(website) {
     website.style.boxShadow = '0px 0px 0px black';
     website.style.transform = 'scale(0.95)';
     gallery.style.transform = "scale(.95)";
-    gallery.addEventListener("load", gallerySites);
-    setTimeout( function () {
+    gallery.onload = function() {
         gallery.style.opacity = '1';
         gallery.style.transform = "scale(1)";
         website.style.boxShadow = '2px 2px 5px black';
         website.style.transform = 'scale(1)';
+        gallerySites();
+    };
+    setTimeout( function () {
         gallery.src = image;
         galleryWebsite.href = website.dataset.url;
         galleryImage.href = image;
