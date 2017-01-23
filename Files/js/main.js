@@ -126,13 +126,12 @@ function photographChange(buttonID) {
         pImage = document.getElementById('photographyImage'),
         filePath = 'Files/img/photography/',
         vImg = document.getElementById('viewImg'),
-        sImg = document.getElementById('smallImg'),
         lImg = document.getElementById('largeImg'),
         pLinks = document.getElementById('photoLinks'),
         PCButtons = document.getElementById('photoControlButtons').offsetHeight + 30 + pLinks.offsetHeight;
     vImg.href = filePath + image + '_fullres.jpg';
-    sImg.href = filePath + image + '.jpg';
     lImg.href = filePath + image + '_fullres.jpg';
+    lImg.download = 'image' + image + '.jpg';
     pImage.style.opacity = '0';
     pImage.style.transform = 'scale(.95)';
     button.style.boxShadow = '0px 0px 0px black';
