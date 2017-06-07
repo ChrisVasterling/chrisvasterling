@@ -20,8 +20,8 @@ button {
 	outline: none;
 }
 hr {
-	display:block; 
-	border:0px solid transparent; 
+	display:block;
+	border:0px solid transparent;
 	border-top:3px solid rgba(80, 40, 35, 1);
 	transition: width 300ms ease-out, opacity 200ms ease-out;
 	transform: translate3d(0px, 0px, 0);
@@ -35,41 +35,20 @@ hr {
     width:100%;
     height: 100vh;
 	min-height:200px;
+	overflow: hidden;
+}
+.BKImg {
 	/*background-image:url(../img/bk/water.jpg);*/
     /*background-image:url(../img/bk/water2.jpg);*/
     background-image:url(../img/bk/bench.jpg);
     /*background-image:url(../img/bk/hexwall.jpg);*/
-	/*background-image:url(../img/bk/building.jpg);*/
-    background-repeat: no-repeat;
+	/*background-image:url(../img/bk/building.jpg);*/;
+	background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
-}
-.startBox {
-    position: relative;
-    top: 75%;
-    left: 50%;
-    transform: translate3d(-50%, 0, 0);
-    display: inline-block;
-    /*animation-name: startBox;*/
-    animation-name: None;
-    animation-duration: 2000ms;
-    animation-delay: 1000ms;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-}
-.start {
-    height: 40px;
-    width: 40px;
-    cursor: pointer;
-    display: block;
-    transform:  rotateZ(45deg);
-    animation-name: start;
-    animation-duration: 2000ms;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    border-bottom: 5px solid rgb(0, 0, 50);
-    border-right: 5px solid rgb(0, 0, 50);
-    opacity: .25;
+	height: 100%;
+	width: 100%;
+	display: inline-block;
 }
 .top span:nth-of-type(1) {
     animation-delay: 1500ms;
@@ -86,32 +65,28 @@ hr {
     position:fixed;
     top: 10px;
     left: 10px;
-    /* Becomes a circle
-        top:15px;
-        left:15px;
-        border-radius: 50%;
-    */
-    display:none;
-    opacity: 0;
-    padding:8px 5px 8px 5px;
+    padding: 9px 5px 9px 5px;
     //background-color:rgba(85,40,10, 1);
-    background-color: rgba(0, 0, 100, 1);
+    background-color: rgba(200, 200, 200, 1);
     cursor:pointer;
-    transition: opacity 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
+    transition: all 300ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
     z-index:10;
+	box-shadow: 0px;
+	transform: scale(0);
 }
 .menuToggle > .bar {
-    width:25px;
-    height:3px;
+    width:30px;
+    height:4px;
     display:block;
     margin: 5px 5px;
-    background-color: white;
+    background-color: rgba(0, 0, 100, 1);
 }
 .name {
 	position:absolute;
     top: 25%;
-    left: 5%;
+    left: calc(5% - 5px);
     opacity: 0;
+	transform: scale(.8);
     font-size:40px;
     font-weight: 300;
 	font-family: Raleway;
@@ -120,14 +95,10 @@ hr {
     width:90%;
     text-align: center;
     margin:0px;
-    padding: 5px 0px 5px 0px;
-    box-shadow: 5px 5px 10px black;
+    padding: 5px;
+    box-shadow: 0px 0px 0px black;
     display: block;
-    animation-name: floatNameIn;
-    animation-duration: 750ms;
-    animation-delay: 500ms;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
+	transition: all 300ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
 }
 .menu {
     width:300px;
@@ -143,7 +114,8 @@ hr {
 }
 .cover {
     display:none;
-    background-color: rgba(20, 20, 20, 0.5);
+    background-color: transparent;
+	transition: background-color 400ms ease-in-out;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -161,14 +133,10 @@ hr {
 	font-weight: 300;
 	font-family: Lato;
 	border:0px;
-	border-bottom: 5px solid transparent;
 	z-index: 1;
-	padding: 15px 0px 15px 0px;
+	padding: 15px 0px 15px 15px;
 	cursor:pointer;
-}
-#about, #contact {
-    text-decoration: line-through;
-    color: rgb(75, 75, 75);
+	text-align: left;
 }
 .websites {
 	width:100%;
@@ -199,12 +167,13 @@ hr {
     background-color: rgba(80,100,145, .7);
     color: red;
     overflow: auto;
+	text-align: center;
 }
-.galleryControls > button {
+.galleryButton {
     box-shadow: 2px 2px 5px black;
     transition: box-shadow 200ms cubic-bezier(0.75,-0.20, 0.25, 1.55), transform 200ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
 }
-.galleryControls > button, .galleryLink, .photoLink, .photoButton {
+.galleryButton, .galleryLink, .photoLink, .photoButton, .contactSocialIco {
     border: 0px;
     padding: 10px;
     margin: 10px;
@@ -237,7 +206,7 @@ hr {
     transition: transform 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
 }
 .galleryLinks, .photoLinks {
-    padding: 10px; 
+    padding: 10px;
     color: white;
     background-color: rgb(80,100,145);
     text-align: left;
@@ -250,7 +219,7 @@ hr {
 .projects {
 	width: 100%;
 }
-.slideAll { 
+.slideAll {
     width: 65%;
 	margin-left:calc(35% / 2);
     box-shadow: 5px 5px 15px black;
@@ -270,10 +239,10 @@ hr {
 	width:100%;
 	height:50px;
 }
-.projectControls > button {
+.projectControlButton {
 	width:50%;
 	height:100%;
-	background-color:rgb(80,100,145);	
+	background-color:rgb(80,100,145);
 	float:left;
 	border:0px;
 	padding: 5px 5px 5px 5px;
@@ -288,7 +257,7 @@ hr {
 	overflow:hidden;
 }
 .projectImg, .projectDesc {
-	position:relative; 
+	position:relative;
 	top:50px;
 	margin: 0px 25px 0px 25px;
 	font-size:25px;
@@ -296,6 +265,13 @@ hr {
 }
 .projectDesc {
     height: auto;
+}
+.projectDescP {
+	margin:0px;
+	padding:0px;
+	font-size:15px;
+	font-family: Ubuntu;
+	word-wrap: break-word;
 }
 .projectImg {
     transition: transform 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
@@ -314,8 +290,10 @@ hr {
     text-align: center;
 }
 .photoControlButtons {
-    width: 100%;
+    width: calc(100% - 20px);
     overflow:auto;
+	white-space: nowrap;
+	padding: 0px 10px 0px 10px;
     background-color: rgb(80,100,145);
     text-align: center;
 }
@@ -323,9 +301,7 @@ hr {
     border: 3px solid rgba(85,40,10, 1);
     padding: 5px 10px 5px 10px;
     box-shadow: 2px 2px 5px black;
-    transition: box-shadow 200ms cubic-bezier(0.75,-0.20, 0.25, 1.55), 
-                transform 200ms cubic-bezier(0.75,-0.20, 0.25, 1.55),
-                opacity 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
+    transition: box-shadow 200ms cubic-bezier(0.75,-0.20, 0.25, 1.55), transform 200ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
     margin: 10px 5px 10px 5px;
     cursor: pointer;
 }
@@ -348,54 +324,177 @@ hr {
 }
 .about {
 	width:100%;
-    display: none;
 }
-.contact {
-    width: 100%;
-    display: none;
+.aboutMe {
+	width: 70%;
+	margin-left: calc(30% / 2);
+	background-color: rgb(80,100,145);
+	box-shadow: 5px 5px 15px black;
+}
+.aboutHeader, .aboutLower {
+	padding: 10px;
+}
+.aboutSimpleImg {
+	height: 100%;
+	background-color: rgb(0, 0, 100);
+	margin-right: 10px;
+	float: left;
+}
+.aboutSimple {
+	font-size: 35px;
+	height: 150px;
+	line-height: 50px; /*height divided by 3 because 'christopher even vasterling' is on 3 seperate lines*/
+	background-color: rgb(225, 225, 225);
+	box-shadow: -5px 5px 10px black;
+}
+.aboutMain {
+	background-color: rgb(225, 225, 225);
+	box-shadow: -5px 5px 10px black;
+	height: auto;
+	overflow: hidden;
+	position: relative;
+}
+.aboutControls, .aboutDetails {
+	height: 100%;
+	width: 100%;
+}
+.aboutDetails {
+	position: relative;
+	top: -100%;
+	min-height: 250px;
+}
+.aboutDetSec {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	padding-bottom: 10px;
+	transition: opacity 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
+}
+.aboutDetails > .aboutDetSec:nth-child(2) {
+	display: none;
+}
+.aboutDetails > .aboutDetSec:nth-child(3) {
+	display: none;
+}
+.aboutDetails > .aboutDetSec:nth-child(4) {
+	display: none;
+}
+.aboutControls {
+	float: left;
+	transform: translate3d(0, 0, 0);
+	transition: transform 400ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
+	position: absolute;
+	z-index:5;
+	background-color: rgba(80,100,145, .7);
+}
+.aboutControlButton {
+	height: 50%;
+	width: 50%;
+	display: block;
+	position: relative;
+	float: left;
+	z-index: 2;
+	cursor: pointer;
+	overflow: hidden;
+}
+.aboutControlButton:hover > .aboutControlBKImg {
+	transform: scale(1.3);
+}
+.aboutControlButton:hover > .aboutControlText {
+	transform: scale(1.2);
+}
+.aboutControlText {
+	height: 100%;
+	width: 100%;
+	color: white;
+	background-color: rgba(80,100,145, .3);
+	display: inline-block;
+	position: absolute;
+	font-size: 25px;
+	font-family: Lato;
+	transition: transform 800ms cubic-bezier(0.1, 0.8, 0.8, 1);
+}
+.aboutControlTextSec {
+	transform: translateY(-50%);
+	position: absolute;
+	top: 50%;
+	left: calc(25% / 2);
+	width: calc(75% - 20px);
+	display: inline-block;
+	text-align: center;
+	background-color: rgba(25, 25, 25, 0.6);
+	padding: 10px;
+}
+.aboutControlBKImg {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: 50% 50%;
+	position: absolute;
+	z-index: -1;
+	transition: transform 1s ease;
+}
+.aboutControlBKImg#aboutControlBtn1 {
+	background-image: url('../img/about/me.jpg');
+}
+.aboutControlBKImg#aboutControlBtn2 {
+	background-image: url('../img/about/school.jpg');
+}
+.aboutControlBKImg#aboutControlBtn3 {
+	background-image: url('../img/about/career.jpg');
+}
+.aboutControlBKImg#aboutControlBtn4 {
+	background-image: url('../img/about/contact.jpg');
+}
+.aboutControlBox {
+	height: 50px;
+	padding: 5px;
+	width: calc(100% - 10px);
+	text-align: right;
+	/*position: absolute;*/
+}
+.aboutControlTog {
+	height: calc(100% - 10px);
+	padding: 5px;
+	background-color: rgb(80,100,145);
+	cursor: pointer;
+	box-shadow: 2px 2px 5px black;
+	z-index: 5;
+	position: relative;
+	transition: box-shadow 200ms cubic-bezier(0.75,-0.20, 0.25, 1.55), transform 200ms cubic-bezier(0.75,-0.20, 0.25, 1.55);
+}
+.contactHeader {
+	margin-left: 10px;
+	font-size: 25px;
+}
+.contactEmail, .contactSocial {
+	background-color: rgb(200, 200, 200);
+	font-size: 30px;
+	margin: 10px;
+	padding: 10px;
+	box-shadow: 2px 2px 5px black;
+}
+.contactEmail > ul > li, .contactSocial > ul > li {
+	font-size: 25px;
+	list-style: none;
+	padding: 0px;
+}
+.contactSocialIco {
+	height: 50px;
+	margin: 5px;
+	padding: 0px;
+	cursor: pointer;
 }
 .footer {
-	background-color:rgb(225, 225, 225); 
-	display:block; 
-	display:none;
+	background-color:rgb(225, 225, 225);
+	display:block;
 	width: 80%;
 	margin-left:10%;
-	text-align:center; 
-	font-family: Raleway; 
-	font-weight: 300; 
-	padding: 5px 0px 5px 0px;
-}
-@keyframes floatNameIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@keyframes start {
-    0% {
-        opacity: .25;
-        
-    }
-    25% {
-        opacity: 1;
-        
-    }
-    75%, 100%{
-        opacity: .25;
-    }
-}
-@keyframes startBox {
-    0% {
-        transform: translate3d(-50%, 0%, 0px);
-    }
-    50% {
-        transform: translate3d(-50%, 50%, 0px);
-    }
-    100% {
-        transform: translate3d(-50%, 0%, 0px);
-    }
+	margin-bottom: 10px;
+	text-align:center;
+	font-family: Raleway;
+	font-weight: 300;
+	padding: 15px 5px 15px 5px;
 }
 @media screen and (max-width: 1150px) {
 	.gallery, .photoReel {
@@ -404,28 +503,28 @@ hr {
 	}
 }
 @media screen and (max-width: 950px) {
-	.gallery, .slideAll, .photoReel {
+	.gallery, .slideAll, .photoReel, .aboutMe {
 		width:75%;
 		margin-left:calc(25%  / 2);
 	}
 }
 @media screen and (max-width: 850px) {
-	.gallery, .slideAll, .photoReel {
+	.gallery, .slideAll, .photoReel, .aboutMe {
 		width:85%;
 		margin-left:calc(15%  / 2);
 	}
 }
 @media screen and (max-width: 750px) {
-	.gallery, .slideAll, .photoReel {
+	.gallery, .slideAll, .photoReel, .aboutMe {
 		width:95%;
 		margin-left:calc(5% / 2);
 	}
     .photoReel > img {
         max-height: 300px;
     }
-	
+
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 400px) {
     .slideContainer, .projectSlides, .projectSlide {
         height: 350px;
     }
@@ -435,4 +534,24 @@ hr {
     .projectImg, .projectDesc {
         top: 25px;
     }
+    .photoReel > img {
+        max-height: 250px;
+    }
+	.aboutSimple {
+		font-size: 25px;
+		height: 100px;
+		line-height: calc(100px / 3);
+	}
+	.aboutControlText {
+		font-size: 20px;
+	}
+	.contactEmail, .contactSocial, .contactHeader {
+		font-size: 20px;
+	}
+	.contactEmail > ul > li, .contactSocial > ul > li {
+		font-size: 15px;
+	}
+	.contactSocialIco {
+		height: 35px;
+	}
 }

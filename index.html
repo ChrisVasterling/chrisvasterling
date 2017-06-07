@@ -29,22 +29,18 @@
     </head>
     <body id="body">
         <div class="top" id="top">
+            <div class="BKImg" id="BKImg"></div>
             <div class="menuToggle" onmousedown="slideMenuOut(this.id)" id="menuBtn">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
-			<div class="name">
+			<div class="name" id="name">
                 Chris Vasterling
-            </div>
-            <div class="startBox" onmousedown="scrollStart()">
-                <span class="start"></span>
-                <span class="start"></span>
-                <span class="start"></span>
             </div>
         </div>
         <div class="menu" id="menuBtnSlide">
-			<p style="margin: 10px 0px 0px 0px; font-size: 30px; font-family:Raleway; color: rgb(0, 0, 100); text-align:center; margin-bottom:15px;">
+			<p style="margin: 10px 0px 0px 0px; font-size: 30px; font-family:Raleway; color: rgb(0, 0, 100); text-align:center; margin-bottom:15px;" id="menuName">
 				Chris Vasterling
 			</p>
 			<hr style="width:80%;"></hr>
@@ -78,26 +74,29 @@
 		</div>
         <div class="cover" onmousedown="slideMenuInCover()" id="cover"></div>
 		<hr style="width:60%; margin-top:25px; margin-bottom:25px;"></hr>
-		
+
         <div class="websites" id="websitesSec">
 			<div class="gallery" id="gallery">
                 <div class="galleryControls" id='galleryControls'>
-                    <button 
-                            data-image="DeLong.png" 
-                            data-url="http://delongyearbooks.weebly.com" 
-                            id="galleryDeLong" onmousedown="galleryImage(this.id)">
+                    <button
+                            data-image="DeLong.png"
+                            data-url="http://delongyearbooks.weebly.com"
+                            id="galleryDeLong" onmousedown="galleryImage(this.id)"
+                            class="galleryButton">
                         DeLong Yearbooks
                     </button>
-                    <button 
-                            data-image="Longfellow.png" 
-                            data-url="http://longfellowyearbooks.weebly.com" 
-                            id="galleryLongfellow" onmousedown="galleryImage(this.id)">
+                    <button
+                            data-image="Longfellow.png"
+                            data-url="http://longfellowyearbooks.weebly.com"
+                            id="galleryLongfellow" onmousedown="galleryImage(this.id)"
+                            class="galleryButton">
                         Longfellow Yearbooks
                     </button>
-                    <button 
-                            data-image="NorthHigh2016.png" 
-                            data-url="http://northyearbooks.weebly.com" 
-                            id="galleryNorthHigh2016" onmousedown="galleryImage(this.id)">
+                    <button
+                            data-image="NorthHigh2016.png"
+                            data-url="http://northyearbooks.weebly.com"
+                            id="galleryNorthHigh2016" onmousedown="galleryImage(this.id)"
+                            class="galleryButton">
                         North High Class of 2016 Yearbook
                     </button>
                 </div>
@@ -120,14 +119,14 @@
             </div>
 		</div>
 		<hr style="width:30%; margin-top:25px; margin-bottom:25px;"></hr>
-        
+
         <div class="projects" id="projectsSec">
             <div class="slideAll">
                 <div class="projectControls">
-                    <button onmousedown="projectsDown()">
+                    <button onmousedown="projectsDown()" class="projectControlButton">
 					   <img src="Files/img/icons/svg/arrowUp.svg"/>
 				    </button>
-				    <button onmousedown="projectsUp()">
+				    <button onmousedown="projectsUp()" class="projectControlButton">
 					   <img src="Files/img/icons/svg/arrowDown.svg"/>
 				    </button>
                 </div>
@@ -138,7 +137,7 @@
                             <div class="projectDesc">
                                 College and Beyond
                                 <hr/>
-                                <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
+                                <p class="projectDescP">
                                     I plan on going to college and doing something with Computer Science or Information Technology.
                                     After that I would like to have a job that does programming.
                                     <!--Goals for colleges and life afterwards-->
@@ -150,10 +149,10 @@
                             <div class="projectDesc">
                                 Programming
                                 <hr/>
-                                <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
+                                <p class="projectDescP">
                                     I have finished the Python and Java course on
                                     <a href="https://www.codecademy.com/Vastermaster" target="_blank">Codecademy</a>.
-                                    Now I am currently putting myself through the 
+                                    Now I am currently putting myself through the
                                     <a href="https://developer.android.com/training/index.html" target="_blank">
                                         Android Studio Training
                                     </a>
@@ -165,10 +164,10 @@
                         <div class="projectSlide">
                             <img src="Files/img/icons/svg/html.svg" class="projectImg"/>
                             <div class="projectDesc">
-                                Minor / Major Improvements
+                                Improvements
                                 <hr/>
-                                <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
-                                    I am going to re-build the DeLong and Longfellow yearbook websites so they look better on mobile
+                                <p class="projectDescP">
+                                    I am going to re-build my earlier websites so they look better on mobile
                                     and are easier to navigate.
                                 </p>
                             </div>
@@ -178,7 +177,7 @@
                             <div class="projectDesc">
                                 This Website
                                 <hr/>
-                                <p style="margin:0px; padding:0px; font-size:15px; font-family: Ubuntu; word-wrap: break-word;">
+                                <p class="projectDescP">
                                     This website will be updated whenever I learn a new skill, make another website or decide to
                                     update the design. The purpose of this website is to show people what type of websites I can
                                     make and what other skills I have.
@@ -191,8 +190,8 @@
             </div>
         </div>
         <hr style="width:25%; margin-top:25px; margin-bottom:25px;"></hr>
-        
-        <div class="photography" id="photographySec" allowfullscreen>
+
+        <div class="photography" id="photographySec">
 			<div class="photoReel" id='photoReel'>
                 <div class="photoControlButtons" id='photoControlButtons'>
                     <button data-image="1" class="photoButton" id="image1" onmousedown='photographChange(this.id)'>1</button>
@@ -207,11 +206,11 @@
                         <button data-image="9" class="photoButton" id="image9" onmousedown='photographChange(this.id)'>9</button>
                         <button data-image="10" class="photoButton" id="image10" onmousedown='photographChange(this.id)'>10</button>
                     </div>
-                    <br/>
-                    <button class="photoButton" id='photosMore' data-fullscreen="false" onclick='displayMorePhotos("display")' style="box-shadow:0px 0px;">
-                        More Photos
-                    </button>
                 </div>
+                <button class="photoButton" id='photosMore' data-fullscreen="false" onclick='displayMorePhotos("display")' style="box-shadow:0px 0px;">
+                    More Photos
+                </button>
+                <br/>
                 <img src="Files/img/photography/1.jpg" class="photographyImage" id="photographyImage"/>
                 <div class="photoLinks" id='photoLinks'>
                     <a href="Files/img/photography/1_fullres.jpg" id="viewImg" target="_blank">
@@ -224,24 +223,107 @@
                             Download
                         </button>
                     </a>
+                    <a href="https://instagram.com/vastermaster/" target="_blank">
+                        <button class="photoLink">
+                            Instagram
+                        </button>
+                    </a>
                 </div>
             </div>
 		</div>
         <hr style="width:20%; margin-top:25px; margin-bottom:25px;"></hr>
-		
+
         <div class="about" id="aboutSec">
-            About
+            <div class="aboutMe">
+                <div class="aboutHeader">
+                    <div class="aboutSimple">
+                        <img src="Files/img/icons/svg/personal.svg" class="aboutSimpleImg"/>
+                        Christopher
+                        <br/>
+                        Evan
+                        <br/>
+                        Vasterling
+                    </div>
+                </div>
+                <div class="aboutLower">
+                    <div class="aboutMain">
+                        <div class="aboutControls" id="aboutControls">
+                            <div class="aboutControlButton" id="aboutDetMe" onclick='aboutControls("aboutControlTog"), openAboutSec(this.id)'>
+                                <div class="aboutControlBKImg" id="aboutControlBtn1"></div>
+                                <div class="aboutControlText">
+                                    <span class="aboutControlTextSec">Me</span>
+                                </div>
+                            </div>
+                            <div class="aboutControlButton" id="aboutDetEdu" onclick='aboutControls("aboutControlTog"), openAboutSec(this.id)'>
+                                <div class="aboutControlBKImg" id="aboutControlBtn2"></div>
+                                <div class="aboutControlText">
+                                    <span class="aboutControlTextSec">Education</span>
+                                </div>
+                            </div>
+                            <div class="aboutControlButton" id="aboutDetCG" onclick='aboutControls("aboutControlTog"), openAboutSec(this.id)'>
+                                <div class="aboutControlBKImg" id="aboutControlBtn3"></div>
+                                <div class="aboutControlText">
+                                    <span class="aboutControlTextSec">Career Goals</span>
+                                </div>
+                            </div>
+                            <div class="aboutControlButton" id="aboutDetCon" onclick='aboutControls("aboutControlTog"), openAboutSec(this.id)'>
+                                <div class="aboutControlBKImg" id="aboutControlBtn4"></div>
+                                <div class="aboutControlText">
+                                    <span class="aboutControlTextSec">Contact</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="aboutControlBox">
+                            <img src="Files/img/icons/svg/arrowLeft.svg" class="aboutControlTog" onmousedown="aboutControls(this.id)" id="aboutControlTog"/>
+                        </div>
+                        <div class="aboutDetails">
+                            <div class="aboutDetSec" id="aboutDetMeSec">
+                                Me
+                            </div>
+                            <div class="aboutDetSec" id="aboutDetEduSec">
+                                Education
+                            </div>
+                            <div class="aboutDetSec" id="aboutDetCGSec">
+                                Career Goals
+                            </div>
+                            <div class="aboutDetSec" id="aboutDetConSec">
+                                <span class="contactHeader">You can contact me via:</span>
+                                <div class="contactEmail">
+                                    Email:
+                                    <br/>
+                                    <ul style="margin: 0px; padding-left: 20px;">
+                                        <li>
+                                            chrisvasterling@gmail.com
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="contactSocial">
+                                    Social Media:
+                                    <br/>
+                                    <ul style="margin: 0px; padding-left: 20px;">
+                                        <li>
+                                            <a href="https://messenger.com/t/b3JhbmdlU29kYXMoMS1CQiwgMi1UTSk.64" target="_blank" title="Messenger">
+                                                <img src="Files/img/icons/svg/mess.svg" class="contactSocialIco" style="margin-left:0px;"/>
+                                            </a>
+                                            <a href="https://instagram.com/vastermaster/" target="_blank" title="Instagram">
+                                                <img src="Files/img/icons/svg/insta.svg" class="contactSocialIco"/>
+                                            </a>
+                                            <a href="https://twitter.com/Vastermaster" target="_blank" title="Twitter">
+                                                <img src="Files/img/icons/svg/twitter.svg" class="contactSocialIco"/>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-		</div>
-		<hr style="width:15%; margin-top:25px; margin-bottom:25px;"></hr>
-		
-        <div class="contact" id="contactSec">
-			Contact
-		</div>
 		<hr style="width:45%; margin-top:25px; margin-bottom:25px;"></hr>
-        <br/>
-		<div class="footer">
-            
+
+        <div class="footer">
+            I did not create the Messenger and Twitter icon(s)
 		</div>
     </body>
 </html>
